@@ -7,7 +7,8 @@
       "price": 2800,
       "originalPrice": 3500,
       "badge": "Bestseller",
-      "rating": 4.9,
+      "rating": null,
+      "reviews": 0,
       "stock": 45,
       "img": "https://images.unsplash.com/photo-1665763630810-e6251bdd392d?w=500&auto=format&fit=crop",
       "desc": "24-karat saffron extract serum for luminous, even-toned skin."
@@ -18,7 +19,8 @@
       "cat": "Skincare",
       "price": 2200,
       "badge": "New",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 38,
       "img": "/images/skincare/2.jpg",
       "desc": "Lightweight gel-cream with Damask rose and hyaluronic acid."
@@ -30,7 +32,8 @@
       "price": 1800,
       "originalPrice": 2200,
       "badge": "Sale",
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 52,
       "img": "/images/skincare/3.jpg",
       "desc": "Weekly purifying mask with organic turmeric and kaolin clay."
@@ -41,7 +44,8 @@
       "cat": "Skincare",
       "price": 3200,
       "badge": "Luxury",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 28,
       "img": "/images/skincare/4.jpg",
       "desc": "Stable ascorbyl glucoside for glass-skin radiance."
@@ -52,7 +56,8 @@
       "cat": "Skincare",
       "price": 2600,
       "badge": "Bestseller",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 35,
       "img": "/images/skincare/5.jpg",
       "desc": "Overnight repair cream with jasmine absolute and peptides."
@@ -63,7 +68,8 @@
       "cat": "Skincare",
       "price": 1600,
       "badge": "New",
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 60,
       "img": "/images/skincare/6.jpg",
       "desc": "Three-weight HA toner for multi-depth hydration."
@@ -73,7 +79,8 @@
       "name": "SPF 50 Botanical Shield",
       "cat": "Skincare",
       "price": 2400,
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 42,
       "img": "/images/skincare/7.jpg",
       "desc": "Invisible, reef-safe SPF with green tea antioxidants."
@@ -84,7 +91,8 @@
       "cat": "Skincare",
       "price": 3800,
       "badge": "Luxury",
-      "rating": 4.9,
+      "rating": null,
+      "reviews": 0,
       "stock": 20,
       "img": "/images/skincare/8.jpg",
       "desc": "Plant-based retinol alternative. Safe for sensitive skin."
@@ -94,7 +102,8 @@
       "name": "Rose Hip Face Oil",
       "cat": "Skincare",
       "price": 2100,
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 48,
       "img": "/images/skincare/9.jpg",
       "desc": "Cold-pressed rosehip oil rich in vitamin A and essential fatty acids."
@@ -105,7 +114,8 @@
       "cat": "Skincare",
       "price": 1900,
       "badge": "Bestseller",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 55,
       "img": "/images/skincare/10.jpg",
       "desc": "Pre-soaked AHA pads for smooth, refined texture overnight."
@@ -115,7 +125,8 @@
       "name": "Centella Calm Essence",
       "cat": "Skincare",
       "price": 1700,
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 44,
       "img": "/images/skincare/11.jpg",
       "desc": "Cica-centred essence that calms redness and strengthens barrier."
@@ -126,7 +137,8 @@
       "cat": "Skincare",
       "price": 2900,
       "badge": "Luxury",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 25,
       "img": "/images/skincare/12.jpg",
       "desc": "Multi-peptide formula that targets fine lines and dark circles."
@@ -137,7 +149,8 @@
       "cat": "Skincare",
       "price": 1400,
       "badge": "New",
-      "rating": 4.4,
+      "rating": null,
+      "reviews": 0,
       "stock": 70,
       "img": "/images/skincare/13.jpg",
       "desc": "Refreshing gel cleanser that melts away makeup without stripping."
@@ -149,7 +162,8 @@
       "price": 1600,
       "badge": "Sale",
       "originalPrice": 2000,
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 58,
       "img": "/images/skincare/14.jpg",
       "desc": "High-strength niacinamide to minimise pores and balance oil."
@@ -160,7 +174,8 @@
       "cat": "Skincare",
       "price": 4200,
       "badge": "Luxury",
-      "rating": 4.9,
+      "rating": null,
+      "reviews": 0,
       "stock": 15,
       "img": "/images/skincare/15.jpg",
       "desc": "24K gold leaf and collagen-boosting ingredients in one decadent mask."
@@ -171,7 +186,8 @@
       "cat": "Makeup",
       "price": 2400,
       "badge": "Bestseller",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 40,
       "img": "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?w=500&auto=format&fit=crop",
       "desc": "Buildable, skin-tint foundation in 20 shades for South Asian skin."
@@ -182,7 +198,8 @@
       "cat": "Makeup",
       "price": 1200,
       "badge": "New",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 65,
       "img": "https://images.unsplash.com/photo-1559828350-dbd975c52096?w=500&auto=format&fit=crop",
       "desc": "Sheer, buildable lip tint with rose extract for a natural flush."
@@ -193,7 +210,8 @@
       "cat": "Makeup",
       "price": 900,
       "badge": "Bestseller",
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 80,
       "img": "/images/makeup/3.jpg",
       "desc": "Smooth, smudge-proof kohl pencil with almond oil conditioning."
@@ -203,7 +221,8 @@
       "name": "Blush Duo Palette",
       "cat": "Makeup",
       "price": 1800,
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 35,
       "img": "/images/makeup/4.jpg",
       "desc": "Two complementary blush shades inspired by saffron sunrise."
@@ -214,7 +233,8 @@
       "cat": "Makeup",
       "price": 1400,
       "badge": "New",
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 50,
       "img": "/images/makeup/5.jpg",
       "desc": "Long-wearing brow pomade with feather-like precision tip."
@@ -225,7 +245,8 @@
       "cat": "Makeup",
       "price": 2000,
       "badge": "Luxury",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 30,
       "img": "/images/makeup/6.jpg",
       "desc": "Finely milled powder with saffron mica for a lit-from-within glow."
@@ -236,7 +257,8 @@
       "cat": "Makeup",
       "price": 1600,
       "badge": "Bestseller",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 55,
       "img": "/images/makeup/7.jpg",
       "desc": "Botanical-infused mascara for 24h volume without clumping."
@@ -248,7 +270,8 @@
       "price": 800,
       "badge": "Sale",
       "originalPrice": 1100,
-      "rating": 4.4,
+      "rating": null,
+      "reviews": 0,
       "stock": 75,
       "img": "/images/makeup/8.jpg",
       "desc": "6-shade collection of long-wearing lip liners in earthy tones."
@@ -258,7 +281,8 @@
       "name": "Contour & Highlight Stick",
       "cat": "Makeup",
       "price": 1900,
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 42,
       "img": "/images/makeup/9.jpg",
       "desc": "Dual-ended stick for sculpting and highlighting in one swipe."
@@ -269,7 +293,8 @@
       "cat": "Makeup",
       "price": 1700,
       "badge": "New",
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 48,
       "img": "/images/makeup/10.jpg",
       "desc": "Skin-smoothing primer with hyaluronic acid and botanical extracts."
@@ -280,7 +305,8 @@
       "cat": "Makeup",
       "price": 2200,
       "badge": "Luxury",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 22,
       "img": "/images/makeup/11.jpg",
       "desc": "Four harmonious shades from petal pink to deep burgundy."
@@ -290,7 +316,8 @@
       "name": "Concealer Radiance Wand",
       "cat": "Makeup",
       "price": 1500,
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 53,
       "img": "/images/makeup/12.jpg",
       "desc": "Brightening concealer with vitamin C for under-eye darkness."
@@ -301,7 +328,8 @@
       "cat": "Makeup",
       "price": 2100,
       "badge": "Bestseller",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 37,
       "img": "/images/makeup/13.jpg",
       "desc": "Sun-kissed bronzer with warm saffron undertones."
@@ -313,7 +341,8 @@
       "price": 1000,
       "badge": "Sale",
       "originalPrice": 1300,
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 68,
       "img": "/images/makeup/14.jpg",
       "desc": "Precision felt-tip liner for sharp wings and smudge-free definition."
@@ -324,7 +353,8 @@
       "cat": "Makeup",
       "price": 1300,
       "badge": "New",
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 60,
       "img": "/images/makeup/15.jpg",
       "desc": "Rose water setting spray that extends wear and adds a dewy finish."
@@ -335,7 +365,8 @@
       "cat": "Fragrance",
       "price": 5800,
       "badge": "Luxury",
-      "rating": 4.9,
+      "rating": null,
+      "reviews": 0,
       "stock": 18,
       "img": "https://images.unsplash.com/photo-1615160460366-2c9a41771b51?w=500&auto=format&fit=crop",
       "desc": "The signature scent. Kashmiri saffron on a base of aged oud."
@@ -346,7 +377,8 @@
       "cat": "Fragrance",
       "price": 1800,
       "badge": "New",
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 55,
       "img": "https://images.unsplash.com/photo-1701291927826-c7775869d822?w=500&auto=format&fit=crop",
       "desc": "Refreshing body mist with Italian neroli and green mandarin."
@@ -357,7 +389,8 @@
       "cat": "Fragrance",
       "price": 6200,
       "badge": "Luxury",
-      "rating": 4.9,
+      "rating": null,
+      "reviews": 0,
       "stock": 12,
       "img": "/images/fragrance/3.jpg",
       "desc": "Dark, complex patchouli and Cambodian oud for the bold wearer."
@@ -368,7 +401,8 @@
       "cat": "Fragrance",
       "price": 3400,
       "badge": "New",
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 28,
       "img": "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?w=500&auto=format&fit=crop",
       "desc": "Provence lavender with bergamot for a calming, wearable scent."
@@ -379,7 +413,8 @@
       "cat": "Fragrance",
       "price": 2600,
       "badge": "Bestseller",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 45,
       "img": "/images/fragrance/5.jpg",
       "desc": "Hand-selected bakhoor chips for home fragrance and gifting."
@@ -390,7 +425,8 @@
       "cat": "Hair Care",
       "price": 2600,
       "badge": "Luxury",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 28,
       "img": "/images/hair-care/1.jpg",
       "desc": "Active-ingredient scalp serum targeting thinning and dryness."
@@ -402,7 +438,8 @@
       "price": 1200,
       "badge": "Sale",
       "originalPrice": 1600,
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 65,
       "img": "https://images.unsplash.com/photo-1686121544157-6f178a23d584?w=500&auto=format&fit=crop",
       "desc": "Zero-waste shampoo bar with rosemary and peppermint."
@@ -413,7 +450,8 @@
       "cat": "Hair Care",
       "price": 1600,
       "badge": "Bestseller",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 48,
       "img": "https://images.unsplash.com/photo-1610705267928-1b9f2fa7f1c5?w=500&auto=format&fit=crop",
       "desc": "Black castor oil with nettle extract for visible hair density."
@@ -423,7 +461,8 @@
       "name": "Dandruff Control Shampoo",
       "cat": "Hair Care",
       "price": 1500,
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 58,
       "img": "/images/hair-care/4.jpg",
       "desc": "Zinc pyrithione and neem formula that clears dandruff gently."
@@ -434,7 +473,8 @@
       "cat": "Hair Care",
       "price": 1700,
       "badge": "New",
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 44,
       "img": "https://images.unsplash.com/photo-1701992679010-7cf5dfee49d5?w=500&auto=format&fit=crop",
       "desc": "Frizz-free curl definition with flaxseed and aloe vera."
@@ -446,7 +486,8 @@
       "price": 1900,
       "badge": "Sale",
       "originalPrice": 2400,
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 38,
       "img": "/images/hair-care/6.jpg",
       "desc": "2-in-1 serum: heat protectant and glossing treatment in one."
@@ -457,7 +498,8 @@
       "cat": "Hair Care",
       "price": 1600,
       "badge": "Luxury",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 40,
       "img": "https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=500&auto=format&fit=crop",
       "desc": "Hibiscus and amla mask for colour-treated and fragile hair."
@@ -468,7 +510,8 @@
       "cat": "Body Care",
       "price": 1800,
       "badge": "Bestseller",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 55,
       "img": "/images/body-care/1.jpg",
       "desc": "Fast-absorbing lotion with saffron and shea butter for silky skin."
@@ -479,7 +522,8 @@
       "cat": "Body Care",
       "price": 2200,
       "badge": "Luxury",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 32,
       "img": "/images/body-care/2.jpg",
       "desc": "Luxurious dry oil with 100 rose petals per bottle."
@@ -490,7 +534,8 @@
       "cat": "Body Care",
       "price": 1200,
       "badge": "New",
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 65,
       "img": "/images/body-care/3.jpg",
       "desc": "Light, everyday jasmine body mist. Spritz, glow, go."
@@ -501,7 +546,8 @@
       "cat": "Body Care",
       "price": 1300,
       "badge": "Bestseller",
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 58,
       "img": "/images/body-care/4.jpg",
       "desc": "Daily brightening body wash with niacinamide and licorice."
@@ -511,7 +557,8 @@
       "name": "Oat & Honey Body Wash",
       "cat": "Body Care",
       "price": 1100,
-      "rating": 4.4,
+      "rating": null,
+      "reviews": 0,
       "stock": 72,
       "img": "/images/body-care/5.jpg",
       "desc": "Gentle, soap-free body wash for sensitive skin."
@@ -522,10 +569,11 @@
       "cat": "Body Care",
       "price": 2200,
       "badge": "Bestseller",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 40,
       "img": "/images/body-care/6.jpg",
-      "desc": "Cocoa and shea butter blend clinically proven to reduce stretch marks."
+      "desc": "Rich cocoa and shea butter blend formulated to nourish and soften stretch-marked skin."
     },
     {
       "id": "b13",
@@ -534,7 +582,8 @@
       "price": 900,
       "badge": "Sale",
       "originalPrice": 1200,
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 80,
       "img": "/images/body-care/7.jpg",
       "desc": "Calming lavender mist for linens, pillows, and body."
@@ -545,7 +594,8 @@
       "cat": "Body Care",
       "price": 1700,
       "badge": "Luxury",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 30,
       "img": "/images/body-care/8.jpg",
       "desc": "Whipped coconut and jojoba butter that melts on contact."
@@ -556,7 +606,8 @@
       "cat": "Lip Care",
       "price": 700,
       "badge": "Bestseller",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 90,
       "img": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500&auto=format&fit=crop",
       "desc": "Tinted rose balm with vitamin E for soft, kissable lips."
@@ -567,7 +618,8 @@
       "cat": "Lip Care",
       "price": 1100,
       "badge": "New",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 65,
       "img": "/images/lip-care/2.jpg",
       "desc": "Plumping lip oil with saffron and hyaluronic acid."
@@ -578,7 +630,8 @@
       "cat": "Lip Care",
       "price": 1400,
       "badge": "Luxury",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 40,
       "img": "/images/lip-care/3.jpg",
       "desc": "Intensive sleeping lip mask. Wake up to hydrated, pillowy lips."
@@ -590,7 +643,8 @@
       "price": 900,
       "badge": "Sale",
       "originalPrice": 1200,
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 72,
       "img": "/images/lip-care/4.jpg",
       "desc": "Sheer colour + intense moisture in a creamy bullet."
@@ -601,7 +655,8 @@
       "cat": "Lip Care",
       "price": 800,
       "badge": "New",
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 85,
       "img": "/images/lip-care/5.jpg",
       "desc": "Edible honey and sugar scrub for smooth lip canvas."
@@ -612,7 +667,8 @@
       "cat": "Lip Care",
       "price": 1600,
       "badge": "Luxury",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 30,
       "img": "/images/lip-care/6.jpg",
       "desc": "Clinical-grade peptide serum to volumise and define lip borders."
@@ -623,7 +679,8 @@
       "cat": "Lip Care",
       "price": 1000,
       "badge": "Bestseller",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 68,
       "img": "/images/lip-care/7.jpg",
       "desc": "Buildable berry stain that transfers zero colour to your cup."
@@ -634,7 +691,8 @@
       "cat": "Lip Care",
       "price": 1200,
       "badge": "New",
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 55,
       "img": "/images/lip-care/8.jpg",
       "desc": "Non-sticky gloss with marine collagen for fuller-looking lips."
@@ -644,7 +702,8 @@
       "name": "Matte Lip Cream",
       "cat": "Lip Care",
       "price": 1100,
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 60,
       "img": "/images/lip-care/9.jpg",
       "desc": "Velvet-matte lip cream in 12 shades. Comfortable for 8+ hours."
@@ -655,7 +714,8 @@
       "cat": "Lip Care",
       "price": 950,
       "badge": "New",
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 75,
       "img": "/images/lip-care/10.jpg",
       "desc": "Targeted vitamin C treatment for pigmented lips."
@@ -666,7 +726,8 @@
       "cat": "Lip Care",
       "price": 1300,
       "badge": "Bestseller",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 50,
       "img": "/images/lip-care/11.jpg",
       "desc": "Thick shea and ceramide pack to repair severely dry lips overnight."
@@ -677,7 +738,8 @@
       "cat": "Lip Care",
       "price": 2200,
       "badge": "Luxury",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 22,
       "img": "/images/lip-care/12.jpg",
       "desc": "Liner, lipstick, and gloss for a perfect ombre in one kit."
@@ -689,7 +751,8 @@
       "price": 700,
       "badge": "Sale",
       "originalPrice": 950,
-      "rating": 4.4,
+      "rating": null,
+      "reviews": 0,
       "stock": 88,
       "img": "/images/lip-care/13.jpg",
       "desc": "Cooling peppermint balm that soothes and plumps simultaneously."
@@ -699,7 +762,8 @@
       "name": "Nude Velvet Lipstick",
       "cat": "Lip Care",
       "price": 1400,
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 45,
       "img": "/images/lip-care/14.jpg",
       "desc": "Nudes inspired by South Asian skin tones. Velvet finish, all day."
@@ -710,7 +774,8 @@
       "cat": "Lip Care",
       "price": 2800,
       "badge": "Luxury",
-      "rating": 4.9,
+      "rating": null,
+      "reviews": 0,
       "stock": 18,
       "img": "/images/lip-care/15.jpg",
       "desc": "Complete 3-step lip rehab: scrub, serum, and overnight mask."
@@ -721,10 +786,11 @@
       "cat": "Eye Care",
       "price": 2800,
       "badge": "Bestseller",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 35,
       "img": "/images/eye-care/1.jpg",
-      "desc": "Caffeine and peptides for dark circles and puffiness in 4 weeks."
+      "desc": "Caffeine and peptides formulated to help reduce the look of dark circles and puffiness over time."
     },
     {
       "id": "e2",
@@ -732,7 +798,8 @@
       "cat": "Eye Care",
       "price": 3200,
       "badge": "Luxury",
-      "rating": 4.9,
+      "rating": null,
+      "reviews": 0,
       "stock": 20,
       "img": "/images/eye-care/2.jpg",
       "desc": "Micro-retinol formula for crow's feet and hooded lid improvement."
@@ -743,7 +810,8 @@
       "cat": "Eye Care",
       "price": 1600,
       "badge": "New",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 50,
       "img": "/images/eye-care/3.jpg",
       "desc": "24K gold hydrogel patches. 20 pairs. Bridal-ready results."
@@ -755,7 +823,8 @@
       "price": 1400,
       "badge": "Sale",
       "originalPrice": 1800,
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 60,
       "img": "/images/eye-care/4.jpg",
       "desc": "Cucumber and aloe gel that deflates puffiness on contact."
@@ -766,7 +835,8 @@
       "cat": "Eye Care",
       "price": 2400,
       "badge": "Bestseller",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 28,
       "img": "/images/eye-care/5.jpg",
       "desc": "Vitamin K and kojic acid targeted treatment for stubborn dark circles."
@@ -777,17 +847,19 @@
       "cat": "Eye Care",
       "price": 2600,
       "badge": "New",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 32,
       "img": "/images/eye-care/6.jpg",
-      "desc": "Clinically proven lash growth serum. Visible in 6 weeks."
+      "desc": "Nourishing lash serum with peptides and panthenol to condition lashes for a fuller-looking appearance."
     },
     {
       "id": "e7",
       "name": "Brow Lamination Gel",
       "cat": "Eye Care",
       "price": 1200,
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 55,
       "img": "/images/eye-care/7.jpg",
       "desc": "Conditioning clear gel for feathery, laminated-look brows."
@@ -798,7 +870,8 @@
       "cat": "Eye Care",
       "price": 2200,
       "badge": "Luxury",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 25,
       "img": "/images/eye-care/8.jpg",
       "desc": "DMAE and collagen cream for firmer, more lifted eyelids."
@@ -809,7 +882,8 @@
       "cat": "Eye Care",
       "price": 1800,
       "badge": "New",
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 42,
       "img": "/images/eye-care/9.jpg",
       "desc": "Rich balm with sea buckthorn and vitamin E for dry periorbital skin."
@@ -821,7 +895,8 @@
       "price": 1100,
       "badge": "Sale",
       "originalPrice": 1400,
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 65,
       "img": "/images/eye-care/10.jpg",
       "desc": "Dissolving hydrogel masks with illuminating mica and niacinamide."
@@ -832,7 +907,8 @@
       "cat": "Eye Care",
       "price": 2000,
       "badge": "Bestseller",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 38,
       "img": "/images/eye-care/11.jpg",
       "desc": "Stable vitamin C eye booster for brightness and collagen support."
@@ -843,7 +919,8 @@
       "cat": "Eye Care",
       "price": 2100,
       "badge": "New",
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 44,
       "img": "/images/eye-care/12.jpg",
       "desc": "Hydrating HA eye serum that plumps fine dehydration lines."
@@ -854,7 +931,8 @@
       "cat": "Eye Care",
       "price": 4200,
       "badge": "Luxury",
-      "rating": 4.9,
+      "rating": null,
+      "reviews": 0,
       "stock": 15,
       "img": "/images/eye-care/13.jpg",
       "desc": "Complete duo: day cream + night serum for total eye rejuvenation."
@@ -864,7 +942,8 @@
       "name": "Collagen Eye Mist",
       "cat": "Eye Care",
       "price": 1300,
-      "rating": 4.4,
+      "rating": null,
+      "reviews": 0,
       "stock": 58,
       "img": "/images/eye-care/14.jpg",
       "desc": "Marine collagen setting mist that refreshes eye makeup mid-day."
@@ -875,7 +954,8 @@
       "cat": "Eye Care",
       "price": 1900,
       "badge": "Bestseller",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 36,
       "img": "/images/eye-care/15.jpg",
       "desc": "Overnight sleeping mask specifically designed for the eye area."
@@ -886,7 +966,8 @@
       "cat": "Men's Grooming",
       "price": 1400,
       "badge": "Bestseller",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 55,
       "img": "/images/mens-grooming/1.jpg",
       "desc": "Deep-cleansing face wash for men with saffron and charcoal."
@@ -897,7 +978,8 @@
       "cat": "Men's Grooming",
       "price": 1200,
       "badge": "Bestseller",
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 60,
       "img": "/images/mens-grooming/2.jpg",
       "desc": "Alcohol-free balm that soothes post-shave irritation."
@@ -909,7 +991,8 @@
       "price": 1500,
       "badge": "Sale",
       "originalPrice": 1900,
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 52,
       "img": "/images/mens-grooming/3.jpg",
       "desc": "Deep-cleansing scrub that draws out pollution and unclogs pores."
@@ -920,7 +1003,8 @@
       "cat": "Men's Grooming",
       "price": 2200,
       "badge": "Bestseller",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 30,
       "img": "/images/mens-grooming/4.jpg",
       "desc": "DHT-blocking serum with biotin and red clover for denser growth."
@@ -931,7 +1015,8 @@
       "cat": "Men's Grooming",
       "price": 1300,
       "badge": "New",
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 58,
       "img": "/images/mens-grooming/5.jpg",
       "desc": "2-in-1 formula for healthy scalp and conditioned beard."
@@ -943,7 +1028,8 @@
       "price": 1100,
       "badge": "Sale",
       "originalPrice": 1500,
-      "rating": 4.4,
+      "rating": null,
+      "reviews": 0,
       "stock": 65,
       "img": "/images/mens-grooming/6.jpg",
       "desc": "Glycerin-rich shaving cream for a close, irritation-free shave."
@@ -954,7 +1040,8 @@
       "cat": "Men's Grooming",
       "price": 600,
       "badge": "New",
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 80,
       "img": "/images/mens-grooming/7.jpg",
       "desc": "Unscented, unfussy lip balm with beeswax and vitamin E."
@@ -965,7 +1052,8 @@
       "cat": "Men's Grooming",
       "price": 1400,
       "badge": "New",
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 50,
       "img": "/images/mens-grooming/8.jpg",
       "desc": "Satisfying peel-off mask that extracts blackheads in one go."
@@ -976,7 +1064,8 @@
       "cat": "Wellness",
       "price": 3200,
       "badge": "Bestseller",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 40,
       "img": "/images/wellness/1.jpg",
       "desc": "Marine collagen + vitamin C daily beauty drink for skin and nails."
@@ -987,7 +1076,8 @@
       "cat": "Wellness",
       "price": 1800,
       "badge": "New",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 55,
       "img": "/images/wellness/2.jpg",
       "desc": "Certified saffron and chamomile blend for calm focus and mood lift."
@@ -998,7 +1088,8 @@
       "cat": "Wellness",
       "price": 2400,
       "badge": "Luxury",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 30,
       "img": "/images/wellness/3.jpg",
       "desc": "Liquid D3/K2 complex for bone, skin, and immune health."
@@ -1009,7 +1100,8 @@
       "cat": "Wellness",
       "price": 4200,
       "badge": "Luxury",
-      "rating": 4.9,
+      "rating": null,
+      "reviews": 0,
       "stock": 18,
       "img": "/images/wellness/4.jpg",
       "desc": "Monthly supply: collagen, biotin, zinc, and vitamin C in one box."
@@ -1020,7 +1112,8 @@
       "cat": "Wellness",
       "price": 1600,
       "badge": "Bestseller",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 60,
       "img": "/images/wellness/5.jpg",
       "desc": "High-potency biotin with bamboo silica for hair, skin, and nails."
@@ -1031,10 +1124,11 @@
       "cat": "Wellness",
       "price": 2800,
       "badge": "New",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 35,
       "img": "/images/wellness/6.jpg",
-      "desc": "Multi-strain probiotics clinically linked to clearer, calmer skin."
+      "desc": "Multi-strain probiotic blend formulated to support gut and skin balance from within."
     },
     {
       "id": "w7",
@@ -1042,7 +1136,8 @@
       "cat": "Wellness",
       "price": 2200,
       "badge": "New",
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 42,
       "img": "/images/wellness/7.jpg",
       "desc": "Ashwagandha and tulsi blend to lower cortisol and support skin barrier."
@@ -1054,7 +1149,8 @@
       "price": 1800,
       "badge": "Sale",
       "originalPrice": 2200,
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 52,
       "img": "/images/wellness/8.jpg",
       "desc": "Natural vitamin C from rosehip berry extract. 250mg per capsule."
@@ -1065,7 +1161,8 @@
       "cat": "Wellness",
       "price": 1900,
       "badge": "Bestseller",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 45,
       "img": "/images/wellness/9.jpg",
       "desc": "Magnesium glycinate for deep sleep and overnight skin repair."
@@ -1076,7 +1173,8 @@
       "cat": "Wellness",
       "price": 2600,
       "badge": "Luxury",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 25,
       "img": "/images/wellness/10.jpg",
       "desc": "Internal HA supplementation for plumper skin from the inside."
@@ -1086,7 +1184,8 @@
       "name": "Omega-3 Beauty Complex",
       "cat": "Wellness",
       "price": 2000,
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 48,
       "img": "/images/wellness/11.jpg",
       "desc": "EPA/DHA complex for skin elasticity, hair, and anti-inflammation."
@@ -1097,7 +1196,8 @@
       "cat": "Wellness",
       "price": 1400,
       "badge": "New",
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 62,
       "img": "/images/wellness/12.jpg",
       "desc": "Anti-inflammatory duo for skin clarity and digestive wellness."
@@ -1109,7 +1209,8 @@
       "price": 1200,
       "badge": "Sale",
       "originalPrice": 1600,
-      "rating": 4.4,
+      "rating": null,
+      "reviews": 0,
       "stock": 70,
       "img": "/images/wellness/13.jpg",
       "desc": "Zinc bisglycinate for acne-prone and oily skin control."
@@ -1120,7 +1221,8 @@
       "cat": "Wellness",
       "price": 1500,
       "badge": "Bestseller",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 58,
       "img": "/images/wellness/14.jpg",
       "desc": "GLA-rich evening primrose oil for hormonal skin and eczema relief."
@@ -1131,7 +1233,8 @@
       "cat": "Wellness",
       "price": 3000,
       "badge": "Luxury",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 20,
       "img": "/images/wellness/15.jpg",
       "desc": "Resveratrol, astaxanthin, and CoQ10 — the anti-ageing triple threat."
@@ -1142,7 +1245,8 @@
       "cat": "Tools & Accessories",
       "price": 2200,
       "badge": "Bestseller",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 35,
       "img": "/images/tools-accessories/1.jpg",
       "desc": "Authentic rose quartz facial roller for lymphatic drainage."
@@ -1153,7 +1257,8 @@
       "cat": "Tools & Accessories",
       "price": 1800,
       "badge": "New",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 45,
       "img": "/images/tools-accessories/2.jpg",
       "desc": "Jade and bian stone gua sha set for face sculpting."
@@ -1164,7 +1269,8 @@
       "cat": "Tools & Accessories",
       "price": 1600,
       "badge": "Bestseller",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 55,
       "img": "/images/tools-accessories/3.jpg",
       "desc": "Densely packed synthetic kabuki for seamless foundation blending."
@@ -1175,7 +1281,8 @@
       "cat": "Tools & Accessories",
       "price": 2600,
       "badge": "Luxury",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 25,
       "img": "/images/tools-accessories/4.jpg",
       "desc": "Stainless steel facial massager for sculpting and puffiness relief."
@@ -1187,7 +1294,8 @@
       "price": 900,
       "badge": "Sale",
       "originalPrice": 1200,
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 70,
       "img": "/images/tools-accessories/5.jpg",
       "desc": "Textured silicone mat for deep-cleaning all brush sizes."
@@ -1198,7 +1306,8 @@
       "cat": "Tools & Accessories",
       "price": 1400,
       "badge": "New",
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 60,
       "img": "/images/tools-accessories/6.jpg",
       "desc": "Gold-plated lash curler with 3 replacement pads. Salon-grade."
@@ -1209,7 +1318,8 @@
       "cat": "Tools & Accessories",
       "price": 700,
       "badge": "New",
-      "rating": 4.4,
+      "rating": null,
+      "reviews": 0,
       "stock": 85,
       "img": "/images/tools-accessories/7.jpg",
       "desc": "No-waste silicone brush for hygienic mask application."
@@ -1221,7 +1331,8 @@
       "price": 800,
       "badge": "Sale",
       "originalPrice": 1100,
-      "rating": 4.3,
+      "rating": null,
+      "reviews": 0,
       "stock": 75,
       "img": "/images/tools-accessories/8.jpg",
       "desc": "12 reusable stencil shapes for perfectly shaped brows every time."
@@ -1232,7 +1343,8 @@
       "cat": "Tools & Accessories",
       "price": 1200,
       "badge": "Bestseller",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 40,
       "img": "/images/tools-accessories/9.jpg",
       "desc": "Precision dermaplaning tool for vellus hair removal and smoothing."
@@ -1243,7 +1355,8 @@
       "cat": "Tools & Accessories",
       "price": 2400,
       "badge": "Luxury",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 22,
       "img": "/images/tools-accessories/10.jpg",
       "desc": "LED-lit 10× magnifying mirror. Perfect for skincare and makeup."
@@ -1254,7 +1367,8 @@
       "cat": "Tools & Accessories",
       "price": 2800,
       "badge": "New",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 30,
       "img": "/images/tools-accessories/11.jpg",
       "desc": "5 professional contour brushes: blush, highlight, sculpt, blend, liner."
@@ -1264,7 +1378,8 @@
       "name": "Jade Rolling Pin",
       "cat": "Tools & Accessories",
       "price": 1600,
-      "rating": 4.5,
+      "rating": null,
+      "reviews": 0,
       "stock": 48,
       "img": "/images/tools-accessories/12.jpg",
       "desc": "Flat jade rolling pin for facial de-puffing and muscle tension."
@@ -1275,7 +1390,8 @@
       "cat": "Tools & Accessories",
       "price": 2000,
       "badge": "Luxury",
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 28,
       "img": "/images/tools-accessories/13.jpg",
       "desc": "0.3mm titanium micro-needle roller for serum absorption enhancement."
@@ -1286,7 +1402,8 @@
       "cat": "Tools & Accessories",
       "price": 1100,
       "badge": "Bestseller",
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 55,
       "img": "/images/tools-accessories/14.jpg",
       "desc": "Soft-bristle silicone body brush for gentle exfoliation in shower."
@@ -1297,7 +1414,8 @@
       "cat": "Tools & Accessories",
       "price": 1900,
       "badge": "New",
-      "rating": 4.7,
+      "rating": null,
+      "reviews": 0,
       "stock": 35,
       "img": "/images/tools-accessories/15.jpg",
       "desc": "Canvas brush roll holds 12 brushes. Elegant and TSA-safe."
@@ -1308,7 +1426,8 @@
       "cat": "Gift Sets",
       "price": 5200,
       "badge": "Bestseller",
-      "rating": 4.9,
+      "rating": null,
+      "reviews": 0,
       "stock": 20,
       "img": "/images/gift-sets/1.jpg",
       "desc": "The best of Saffron & Co: serum, moisturiser, face oil, and lip balm."
@@ -1319,7 +1438,8 @@
       "cat": "Gift Sets",
       "price": 4200,
       "badge": "Bestseller",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 25,
       "img": "/images/gift-sets/2.jpg",
       "desc": "5-step routine: cleanser, toner, serum, moisturiser, SPF."
@@ -1330,7 +1450,8 @@
       "cat": "Gift Sets",
       "price": 3400,
       "badge": "Bestseller",
-      "rating": 4.9,
+      "rating": null,
+      "reviews": 0,
       "stock": 22,
       "img": "/images/gift-sets/3.jpg",
       "desc": "Body lotion, scrub, rose water mist, and bath salts for mum."
@@ -1341,7 +1462,8 @@
       "cat": "Gift Sets",
       "price": 2800,
       "badge": "New",
-      "rating": 4.6,
+      "rating": null,
+      "reviews": 0,
       "stock": 40,
       "img": "/images/gift-sets/4.jpg",
       "desc": "Body scrub, body lotion, and dry oil spray for radiant skin."
@@ -1352,12 +1474,13 @@
       "cat": "Gift Sets",
       "price": 4400,
       "badge": "Bestseller",
-      "rating": 4.8,
+      "rating": null,
+      "reviews": 0,
       "stock": 25,
       "img": "/images/gift-sets/5.jpg",
       "desc": "Bestselling rose serum + saffron face oil. Boxed to impress."
     }
   ],
   "count": 123,
-  "updated": "2026-05-17T23:27:48.568Z"
+  "updated": "2026-05-17T23:52:32.078Z"
 }

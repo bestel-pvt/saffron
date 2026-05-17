@@ -6,7 +6,7 @@ import {
   Check, MapPin, Phone, User, Leaf, Droplets, Sun, Sparkles,
   Package, UserCircle2, ClipboardList, Mail, FileText, Loader2, Upload, AlertCircle,
 } from 'lucide-react'
-import { ALL_PRODUCTS, CATEGORIES_DATA, TESTIMONIALS, CITIES } from './data.js'
+import { ALL_PRODUCTS, CATEGORIES_DATA, CITIES } from './data.js'
 import CategoryDetailPage from './components/CategoryDetailPage.jsx'
 import ProductDetailPage from './components/ProductDetailPage.jsx'
 import Invoice from './components/Invoice.jsx'
@@ -48,6 +48,8 @@ function pageToPath(page, category, productId) {
     case 'contact':     return '/contact'
     case 'privacy':     return '/privacy'
     case 'terms':       return '/terms'
+    case 'returns':     return '/returns'
+    case 'shipping':    return '/shipping'
     default:            return '/'
   }
 }
@@ -74,6 +76,8 @@ function pathToState(pathname, cats, products) {
     case 'contact':   return { page: 'contact' }
     case 'privacy':   return { page: 'privacy' }
     case 'terms':     return { page: 'terms' }
+    case 'returns':   return { page: 'returns' }
+    case 'shipping':  return { page: 'shipping' }
     default: return { page: 'home' }
   }
 }
@@ -82,12 +86,12 @@ function pathToState(pathname, cats, products) {
    INGREDIENTS (kept here for JSX icons)
 ───────────────────────────────────────────────────── */
 const INGREDIENTS_DATA = [
-  { name:'Saffron',          origin:'Kashmir, Pakistan',   icon:<Sparkles size={20}/>, benefit:'Brightens & evens tone',      color:'#D4956A', desc:'The world\'s most precious spice — each thread hand-harvested. Saffron\'s crocin content visibly reduces pigmentation and imparts a golden radiance to skin.' },
-  { name:'Rose Extract',     origin:'Taif, Saudi Arabia',  icon:<Leaf size={20}/>,    benefit:'Hydrates & soothes',           color:'#E8A0A0', desc:'Cold-pressed from Damask rose petals at peak bloom. Rich in antioxidants and natural moisturising factors that strengthen the skin barrier over time.' },
-  { name:'Jasmine Absolute', origin:'Multan, Pakistan',    icon:<Droplets size={20}/>,benefit:'Repairs & nourishes',          color:'#F5E6A3', desc:'Steam-distilled from jasmine sambac flowers picked before dawn. Deeply regenerative — promotes elastin production for firmer, more supple skin.' },
-  { name:'Turmeric',         origin:'Sindh, Pakistan',     icon:<Sun size={20}/>,     benefit:'Purifies & anti-inflammatory', color:'#F0C040', desc:'Organic turmeric standardised to 5% curcumin content. Clinical studies show a 40% reduction in post-inflammatory hyperpigmentation in 8 weeks.' },
-  { name:'Vitamin C',        origin:'Synthesised (stable)',icon:<Sparkles size={20}/>,benefit:'Brightens & protects',         color:'#A8D8A8', desc:'Ascorbyl glucoside — the most stable form of Vitamin C. Unlike L-ascorbic acid, it doesn\'t oxidise and maintains efficacy for the full shelf life.' },
-  { name:'Hyaluronic Acid',  origin:'Bio-fermented',       icon:<Droplets size={20}/>,benefit:'Plumps & deeply hydrates',     color:'#A8C8E8', desc:'Three molecular weights for multi-depth hydration — from surface plumping to deep dermal moisture. Holds 1,000× its weight in water.' },
+  { name:'Saffron',          origin:'Kashmir',             icon:<Sparkles size={20}/>, benefit:'Brightens & evens tone',      color:'#D4956A', desc:'One of the world\'s most precious spices. Saffron is rich in crocin, an antioxidant that helps support a brighter, more even-toned complexion when used regularly in skincare.' },
+  { name:'Rose Extract',     origin:'Damask Rose',         icon:<Leaf size={20}/>,    benefit:'Hydrates & soothes',           color:'#E8A0A0', desc:'Cold-pressed Damask rose extract is rich in antioxidants and natural moisturising factors that help calm and condition the skin barrier.' },
+  { name:'Jasmine Absolute', origin:'Botanical',           icon:<Droplets size={20}/>,benefit:'Repairs & nourishes',          color:'#F5E6A3', desc:'Steam-distilled jasmine flower extract — known traditionally for its softening, conditioning, and aromatic properties in skincare and fragrance.' },
+  { name:'Turmeric',         origin:'Pakistan',            icon:<Sun size={20}/>,     benefit:'Purifies & anti-inflammatory', color:'#F0C040', desc:'Organic turmeric extract standardised for curcumin content. Curcumin is widely studied for its antioxidant and skin-soothing properties.' },
+  { name:'Vitamin C',        origin:'Stable derivative',   icon:<Sparkles size={20}/>,benefit:'Brightens & protects',         color:'#A8D8A8', desc:'We use ascorbyl glucoside — a stable Vitamin C derivative that doesn\'t oxidise as readily as L-ascorbic acid, so it remains effective for the full shelf life.' },
+  { name:'Hyaluronic Acid',  origin:'Bio-fermented',       icon:<Droplets size={20}/>,benefit:'Plumps & deeply hydrates',     color:'#A8C8E8', desc:'Multiple molecular weights of hyaluronic acid for hydration at different skin levels — surface plumping to deeper moisture support.' },
 ]
 
 function useReveal() {
@@ -175,7 +179,7 @@ function ProductCard({ p, onAdd, wishlist, onWish, onView }) {
       <div className="mt-3 px-1 space-y-0.5" onClick={onView} style={{ cursor: onView ? 'pointer' : undefined }}>
         <p className="font-display text-lg text-bark leading-tight hover:text-saffron transition-colors">{p.name}</p>
         <p className="font-body text-xs text-bark/40">{p.cat}</p>
-        <Stars n={Math.floor(p.rating)} />
+        {p.rating != null && <Stars n={Math.floor(p.rating)} />}
         <div className="flex items-center gap-2 pt-0.5">
           <span className="font-body font-500 text-sm text-bark">PKR {p.price.toLocaleString()}</span>
           {p.originalPrice && <span className="font-body text-xs text-bark/35 line-through">PKR {p.originalPrice.toLocaleString()}</span>}
@@ -1011,8 +1015,8 @@ function Footer({ navigate }) {
           </div>
           {[
             { title: 'Shop', links: [['shop', 'All Products', {}], ['collections', 'Collections', {}], ['shop', 'New Arrivals', {filter: 'New Arrivals'}], ['shop', 'Sale', {filter: 'Sale'}]] },
-            { title: 'Explore', links: [['ingredients', 'Ingredients', {}], ['about', 'Our Story', {}], ['about', 'Blog', {}], ['contact', 'Careers', {}]] },
-            { title: 'Help', links: [['account', 'Track Order', {}], ['contact', 'Returns & Refunds', {}], ['contact', 'FAQs', {}], ['contact', 'Contact Us', {}]] },
+            { title: 'Explore', links: [['ingredients', 'Ingredients', {}], ['about', 'Our Story', {}]] },
+            { title: 'Help', links: [['account', 'Track Order', {}], ['contact', 'Contact Us', {}]] },
           ].map(col => (
             <div key={col.title}>
               <p className="font-body text-xs text-cream/30 uppercase tracking-widest mb-4">{col.title}</p>
@@ -1027,10 +1031,14 @@ function Footer({ navigate }) {
         <div className="pt-8 space-y-3">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">
             <p className="font-body text-xs text-cream/20">© 2026 Saffron & Co. All rights reserved.</p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 flex-wrap justify-center">
               <button onClick={() => navigate('privacy')} className="font-body text-xs text-cream/35 hover:text-saffron-light transition-colors">Privacy Policy</button>
               <span className="text-cream/15">·</span>
               <button onClick={() => navigate('terms')} className="font-body text-xs text-cream/35 hover:text-saffron-light transition-colors">Terms of Service</button>
+              <span className="text-cream/15">·</span>
+              <button onClick={() => navigate('returns')} className="font-body text-xs text-cream/35 hover:text-saffron-light transition-colors">Returns Policy</button>
+              <span className="text-cream/15">·</span>
+              <button onClick={() => navigate('shipping')} className="font-body text-xs text-cream/35 hover:text-saffron-light transition-colors">Shipping Info</button>
             </div>
             <p className="font-body text-xs text-cream/20">Secure checkout · EasyPaisa & Cash on Delivery</p>
           </div>
@@ -1107,7 +1115,7 @@ function HomePage({ allProducts, categoriesData, onAdd, navigate, wishlist, onWi
               </button>
             </div>
             <div className="flex items-center gap-8 mt-10 pt-10 border-t border-bark/8 reveal delay-3">
-              {[['180+', 'Products'], ['12', 'Categories'], ['30-Day', 'Returns']].map(([n, l]) => (
+              {[['100+', 'Products'], ['11', 'Categories'], ['7-Day', 'Returns']].map(([n, l]) => (
                 <div key={l}><p className="font-display text-2xl text-bark">{n}</p><p className="font-body text-xs text-bark/40 mt-0.5">{l}</p></div>
               ))}
             </div>
@@ -1181,7 +1189,7 @@ function HomePage({ allProducts, categoriesData, onAdd, navigate, wishlist, onWi
       {/* Trust bar */}
       <div className="border-y border-bark/8 py-10 max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8 reveal">
-          {[{ icon: <Truck size={18} />, t: 'Free Delivery', s: 'On orders over PKR 4,000' }, { icon: <RefreshCw size={18} />, t: '30-Day Returns', s: 'No questions asked' }, { icon: <Shield size={18} />, t: '100% Authentic', s: 'Certified botanical ingredients' }].map(({ icon, t, s }) => (
+          {[{ icon: <Truck size={18} />, t: 'Free Delivery', s: 'On orders over PKR 4,000' }, { icon: <RefreshCw size={18} />, t: '7-Day Returns', s: 'Easy returns within 7 days' }, { icon: <Shield size={18} />, t: 'Authentic Products', s: 'Sourced & formulated with care' }].map(({ icon, t, s }) => (
             <div key={t} className="flex items-center gap-4">
               <div className="w-10 h-10 bg-saffron/10 rounded-xl flex items-center justify-center text-saffron">{icon}</div>
               <div><p className="font-body font-500 text-sm text-bark">{t}</p><p className="font-body text-xs text-bark/40 mt-0.5">{s}</p></div>
@@ -1190,28 +1198,114 @@ function HomePage({ allProducts, categoriesData, onAdd, navigate, wishlist, onWi
         </div>
       </div>
 
-      {/* Testimonials */}
-      <section className="bg-bark py-20">
+      {/* Payment & shipping partners */}
+      <section className="bg-cream py-12 border-b border-bark/8">
         <div className="max-w-7xl mx-auto px-6">
-          <SectionHeader tag="Reviews" title="What She Said" center />
-          <div className="grid md:grid-cols-3 gap-6">
-            {TESTIMONIALS.slice(0, 3).map((t, i) => (
-              <div key={t.name} className={`bg-bark-light rounded-3xl p-7 reveal delay-${i + 1}`}>
-                <Stars n={t.rating} />
-                <p className="font-display text-lg italic text-cream/75 mt-4 mb-6 leading-relaxed">"{t.text}"</p>
-                <div className="flex items-center gap-3 pt-4 border-t border-cream/10">
-                  <div className="w-10 h-10 rounded-full bg-saffron flex items-center justify-center font-display text-lg text-white">{t.name[0]}</div>
-                  <div><p className="font-body text-sm font-500 text-cream">{t.name}</p><p className="font-body text-xs text-cream/35">{t.city}</p></div>
-                </div>
+          <p className="text-center font-body text-[11px] text-bark/35 uppercase tracking-[0.3em] mb-6">Payments &amp; Shipping</p>
+          <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-12">
+            <div className="flex flex-col items-center gap-2">
+              <div className="h-10 px-4 bg-white border border-bark/8 rounded-xl flex items-center justify-center min-w-[100px]">
+                <EasyPaisaLogo size="sm" />
               </div>
-            ))}
+              <p className="font-body text-[10px] text-bark/40 uppercase tracking-wider">EasyPaisa</p>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <div className="h-10 px-4 bg-white border border-bark/8 rounded-xl flex items-center justify-center min-w-[100px]">
+                <span className="font-display font-500 text-bark/70 text-sm">Cash on Delivery</span>
+              </div>
+              <p className="font-body text-[10px] text-bark/40 uppercase tracking-wider">COD Available</p>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <div className="h-10 px-4 bg-white border border-bark/8 rounded-xl flex items-center justify-center min-w-[100px]">
+                <span className="font-display font-500 text-red-600 text-sm tracking-wide">TCS</span>
+              </div>
+              <p className="font-body text-[10px] text-bark/40 uppercase tracking-wider">Express Delivery</p>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <div className="h-10 px-4 bg-white border border-bark/8 rounded-xl flex items-center justify-center min-w-[100px]">
+                <span className="font-display font-500 text-amber-600 text-sm tracking-wide">Leopards</span>
+              </div>
+              <p className="font-body text-[10px] text-bark/40 uppercase tracking-wider">Courier Service</p>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Customer Reviews — fetched live from public review endpoints */}
+      <RealReviewsSection allProducts={allProducts} />
+
       {/* Newsletter */}
       <NewsletterSection />
     </>
+  )
+}
+
+/* ─────────────────────────────────────────────────────
+   REAL REVIEWS SECTION (HomePage)
+───────────────────────────────────────────────────── */
+function RealReviewsSection({ allProducts }) {
+  const [reviews, setReviews] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    let cancelled = false
+    // Fetch approved reviews for ALL products via simple "all approved" public endpoint.
+    // Backend doesn't have a single "all approved" endpoint, so we batch-fetch a handful per product up to a cap.
+    const productSample = (allProducts || []).slice(0, 30)
+    Promise.all(
+      productSample.map(p =>
+        fetch(`/api/reviews/${encodeURIComponent(p.id)}`)
+          .then(r => r.ok ? r.json() : { reviews: [] })
+          .then(d => (d.reviews || []).map(r => ({ ...r, productName: p.name, productImg: p.img })))
+          .catch(() => [])
+      )
+    ).then(results => {
+      if (cancelled) return
+      const all = results.flat()
+        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+        .slice(0, 3)
+      setReviews(all)
+      setLoading(false)
+    })
+    return () => { cancelled = true }
+  }, [allProducts])
+
+  // Hide entirely while loading (avoids flash). Show "be the first" if no reviews exist.
+  if (loading) return null
+
+  return (
+    <section className="bg-bark py-20">
+      <div className="max-w-7xl mx-auto px-6">
+        <SectionHeader tag="Reviews" title="What Our Customers Say" center />
+        {reviews.length === 0 ? (
+          <div className="text-center max-w-md mx-auto">
+            <p className="font-body text-sm text-cream/55 leading-relaxed mb-6">
+              No reviews yet — be one of the first to share your experience.
+              Order from us, and after delivery you'll be able to leave a review on any product page.
+            </p>
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-3 gap-6">
+            {reviews.map((r, i) => (
+              <div key={r.id} className="bg-bark-light rounded-3xl p-7">
+                <Stars n={r.rating} />
+                {r.title && <p className="font-display text-base font-500 text-cream mt-3">{r.title}</p>}
+                <p className="font-display text-base italic text-cream/75 mt-3 mb-6 leading-relaxed">"{r.comment}"</p>
+                <div className="flex items-center gap-3 pt-4 border-t border-cream/10">
+                  {r.productImg && (
+                    <img src={r.productImg} alt={r.productName} className="w-10 h-10 rounded-lg object-cover bg-cream"/>
+                  )}
+                  <div className="flex-1 min-w-0">
+                    <p className="font-body text-sm font-500 text-cream truncate">{r.customerName}</p>
+                    <p className="font-body text-xs text-cream/35 truncate">on {r.productName}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
   )
 }
 
@@ -1314,10 +1408,10 @@ function IngredientsPage() {
         </div>
         <div className="bg-bark rounded-3xl p-12 text-center reveal">
           <p className="font-body text-xs text-saffron-light uppercase tracking-[0.3em] mb-3">Our Promise</p>
-          <h2 className="font-display text-4xl text-cream font-300 mb-4">No Harmful Ingredients. Ever.</h2>
-          <p className="font-body text-cream/40 max-w-xl mx-auto leading-relaxed mb-8">Every Saffron & Co formula is free from parabens, sulphates, synthetic fragrance, mineral oil, and over 1,400 flagged ingredients.</p>
+          <h2 className="font-display text-4xl text-cream font-300 mb-4">Honest Formulas, Always</h2>
+          <p className="font-body text-cream/40 max-w-xl mx-auto leading-relaxed mb-8">Every Saffron &amp; Co formula is free from parabens, sulphates, and synthetic fragrance — and we tell you exactly what's in each product.</p>
           <div className="flex flex-wrap justify-center gap-3">
-            {['Paraben-Free', 'Sulphate-Free', 'No Synthetic Fragrance', 'Cruelty-Free', 'pH Balanced', 'Dermatologist Tested'].map(b => (
+            {['Paraben-Free', 'Sulphate-Free', 'No Synthetic Fragrance', 'Cruelty-Free', 'pH Balanced'].map(b => (
               <span key={b} className="font-body text-xs text-cream/60 border border-cream/20 px-4 py-2 rounded-full flex items-center gap-2">
                 <Check size={11} className="text-saffron-light" />{b}
               </span>
@@ -1331,13 +1425,6 @@ function IngredientsPage() {
 
 function AboutPage({ navigate }) {
   useReveal()
-  const timeline = [
-    { year: '2016', e: 'Founded in Lahore with a single rose serum and a commitment to botanical luxury.' },
-    { year: '2018', e: 'Expanded to Karachi & Islamabad. First 5,000 customers milestone.' },
-    { year: '2020', e: 'Launched Saffron Collection — our hero range using Kashmiri saffron.' },
-    { year: '2022', e: '12,000 customers. Featured in Vogue Pakistan and Dawn Images.' },
-    { year: '2024', e: 'Full 12-category range with 180+ products. Shipping across Pakistan.' },
-  ]
   return (
     <div className="pt-24 pb-20 bg-cream">
       <div className="max-w-7xl mx-auto px-6">
@@ -1357,16 +1444,16 @@ function AboutPage({ navigate }) {
             <p className="font-body text-xs text-saffron uppercase tracking-[0.3em] mb-4">The Philosophy</p>
             <h2 className="font-display text-3xl lg:text-4xl text-bark font-300 mb-6">Luxury and nature need not be opposites</h2>
             <div className="space-y-4 font-body text-sm text-bark/55 leading-relaxed">
-              <p>Saffron & Co was born from a belief that the finest skincare doesn't require a laboratory full of synthetics. We started with saffron — the world's most precious spice — and asked: what happens when we combine this with the best botanical science has to offer?</p>
-              <p>Eight years later, every formula we create still starts with that question. Rare saffron from Kashmir, rose from Taif, jasmine from Multan — sourced directly from farmers who share our values.</p>
-              <p>We never compromise on what goes on your skin. No parabens, no sulphates, no synthetic fragrance. Just honest, effective beauty rooted in botanical wisdom.</p>
+              <p>Saffron &amp; Co is a Pakistani beauty brand built around one belief: that thoughtful, botanical-led skincare doesn't need a laboratory full of synthetics to deliver real results.</p>
+              <p>We started by asking what would happen if we combined some of the world's most precious botanical ingredients — saffron, rose, jasmine — with the best of modern formulation science. Every product on this site is the answer to that question for a specific concern.</p>
+              <p>We don't use parabens, sulphates, or synthetic fragrance. We are open about what's in every formula. And we ship across Pakistan with EasyPaisa and Cash on Delivery so it's easy for anyone to try.</p>
             </div>
           </div>
         </div>
         <div className="mb-20">
           <SectionHeader tag="Our Values" title="What We Believe" center />
           <div className="grid md:grid-cols-4 gap-5">
-            {[{ icon: <Leaf size={22} />, t: 'Botanical First', s: 'Every ingredient begins with a plant.' }, { icon: <Shield size={22} />, t: 'Nothing Hidden', s: 'Full ingredient transparency, always.' }, { icon: <Sparkles size={22} />, t: 'Efficacy Proven', s: 'Formulas tested in independent labs.' }, { icon: <Heart size={22} />, t: 'Cruelty Free', s: 'No animal testing. Ever.' }].map(({ icon, t, s }, i) => (
+            {[{ icon: <Leaf size={22} />, t: 'Botanical First', s: 'Every ingredient begins with a plant.' }, { icon: <Shield size={22} />, t: 'Nothing Hidden', s: 'Full ingredient transparency, always.' }, { icon: <Sparkles size={22} />, t: 'Honest Formulas', s: 'No paraben, no SLS, no synthetic fragrance.' }, { icon: <Heart size={22} />, t: 'Cruelty Free', s: 'No animal testing. Ever.' }].map(({ icon, t, s }, i) => (
               <div key={t} className={`bg-white border border-bark/8 rounded-3xl p-6 text-center reveal delay-${i + 1}`}>
                 <div className="w-12 h-12 bg-saffron/10 rounded-2xl flex items-center justify-center text-saffron mx-auto mb-4">{icon}</div>
                 <h3 className="font-display text-xl text-bark mb-2">{t}</h3>
@@ -1375,26 +1462,9 @@ function AboutPage({ navigate }) {
             ))}
           </div>
         </div>
-        <div className="mb-20">
-          <SectionHeader tag="Since 2016" title="Our Journey" center />
-          <div className="max-w-2xl mx-auto">
-            {timeline.map((t, i) => (
-              <div key={t.year} className={`flex gap-6 reveal delay-${(i % 4) + 1}`}>
-                <div className="flex flex-col items-center shrink-0">
-                  <div className="w-10 h-10 bg-saffron text-white rounded-full flex items-center justify-center font-body font-500 text-xs">{t.year.slice(2)}</div>
-                  {i < timeline.length - 1 && <div className="w-px flex-1 bg-bark/10 my-2" />}
-                </div>
-                <div className="pb-8">
-                  <p className="font-body font-500 text-sm text-saffron uppercase tracking-wide">{t.year}</p>
-                  <p className="font-body text-sm text-bark/55 leading-relaxed mt-1">{t.e}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
         <div className="text-center bg-rose/30 border border-bark/8 rounded-3xl p-12 reveal">
           <h2 className="font-display text-4xl text-bark font-300 mb-4">Ready to Begin Your Ritual?</h2>
-          <p className="font-body text-bark/50 mb-8 max-w-md mx-auto leading-relaxed text-sm">Explore 180+ products across 12 categories — crafted for your most radiant self.</p>
+          <p className="font-body text-bark/50 mb-8 max-w-md mx-auto leading-relaxed text-sm">Explore our growing range of botanical skincare, makeup, fragrance, and wellness — crafted for your most radiant self.</p>
           <button onClick={() => navigate('shop')} className="btn-shimmer text-white font-body text-sm px-8 py-3.5 rounded-full inline-flex items-center gap-2">
             Shop All Products <ArrowRight size={15} />
           </button>
@@ -1521,7 +1591,7 @@ function PrivacyPage() {
         <div className="mb-12 reveal">
           <p className="font-body text-xs text-saffron uppercase tracking-[0.3em] mb-3">Legal</p>
           <h1 className="font-display text-5xl text-bark font-300 mb-4">Privacy Policy</h1>
-          <p className="font-body text-sm text-bark/40">Last updated: January 2024</p>
+          <p className="font-body text-sm text-bark/40">Last updated: May 2026</p>
           <div className="w-12 h-px bg-saffron mt-6" />
         </div>
         <p className="font-body text-bark/55 leading-relaxed mb-10 reveal">At Saffron & Co, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information when you use our website and services.</p>
@@ -1548,7 +1618,7 @@ function TermsPage() {
     { title: 'Products and Pricing', content: 'All prices are listed in Pakistani Rupees (PKR) and are inclusive of applicable taxes unless stated otherwise. We reserve the right to change prices at any time without prior notice. Product images are for illustrative purposes and actual products may vary slightly.' },
     { title: 'Orders and Payment', content: 'By placing an order, you confirm that you are authorised to use the payment method. We accept EasyPaisa transfers (to "Saffron & Company", 0344-4183049) and Cash on Delivery (COD). EasyPaisa orders are confirmed once we verify the transfer; COD orders are confirmed once the delivery arrangement is approved.' },
     { title: 'Shipping and Delivery', content: 'We deliver across Pakistan. Standard delivery takes 3–5 business days. Free delivery is offered on orders above PKR 4,000. Delivery times are estimates and may vary due to factors beyond our control. We are not liable for delays caused by courier services.' },
-    { title: 'Returns and Refunds', content: 'We offer a 30-day return policy for unused, unopened products in their original packaging. To initiate a return, contact us at support@saffronco.pk. Refunds are processed within 7–10 business days. Shipping costs are non-refundable unless the return is due to our error.' },
+    { title: 'Returns and Refunds', content: 'We offer a 7-day return window for unused, unopened products in their original packaging. To initiate a return, email returns@saffronco.pk or message us on WhatsApp at 0344-4183049 with your order number. Refunds are processed within 5-7 business days. Shipping costs are non-refundable unless the return is due to our error. See our full Returns Policy page for details.' },
     { title: 'Product Use', content: 'Our products are intended for external use only unless specifically stated. Always perform a patch test before full application. We are not liable for any adverse reactions caused by misuse or failure to follow product instructions. If you have sensitive skin or medical conditions, consult a dermatologist before use.' },
     { title: 'Intellectual Property', content: 'All content on this website, including images, text, logos, and product descriptions, is the property of Saffron & Co and is protected by copyright law. Unauthorised use, reproduction, or distribution is strictly prohibited.' },
     { title: 'Limitation of Liability', content: 'Saffron & Co shall not be liable for any indirect, incidental, or consequential damages arising from the use of our products or services. Our total liability shall not exceed the amount paid for the specific order in question.' },
@@ -1561,10 +1631,86 @@ function TermsPage() {
         <div className="mb-12 reveal">
           <p className="font-body text-xs text-saffron uppercase tracking-[0.3em] mb-3">Legal</p>
           <h1 className="font-display text-5xl text-bark font-300 mb-4">Terms of Service</h1>
-          <p className="font-body text-sm text-bark/40">Last updated: January 2024</p>
+          <p className="font-body text-sm text-bark/40">Last updated: May 2026</p>
           <div className="w-12 h-px bg-saffron mt-6" />
         </div>
         <p className="font-body text-bark/55 leading-relaxed mb-10 reveal">Welcome to Saffron & Co. These Terms of Service govern your use of our website and the purchase of our products. Please read these terms carefully before using our services.</p>
+        <div className="space-y-8">
+          {sections.map((s, i) => (
+            <div key={s.title} className={`reveal delay-${(i % 4) + 1}`}>
+              <h2 className="font-display text-xl text-bark mb-3">{i + 1}. {s.title}</h2>
+              <p className="font-body text-sm text-bark/55 leading-relaxed">{s.content}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ─────────────────────────────────────────────────────
+   RETURNS POLICY PAGE
+───────────────────────────────────────────────────── */
+function ReturnsPage() {
+  useReveal()
+  const sections = [
+    { title: 'Return Window', content: 'You can request a return or exchange within 7 days of receiving your order. To be eligible, items must be unused, unopened, and in their original packaging with all seals intact. Used or opened products cannot be returned for hygiene reasons.' },
+    { title: 'How to Request a Return', content: 'Email us at returns@saffronco.pk or message us on WhatsApp at 0344-4183049 with your order number, the item(s) you would like to return, and the reason. We will respond within 24 hours with next steps.' },
+    { title: 'Damaged or Wrong Items', content: 'If you receive a damaged, defective, or wrong item, please contact us within 48 hours of delivery with clear photographs of the issue. We will arrange a free replacement or full refund, including any return shipping costs.' },
+    { title: 'Return Shipping', content: 'For change-of-mind returns, the customer is responsible for return shipping costs. Use a reliable courier (TCS, Leopards, or Pakistan Post) and share the tracking number with us. We recommend insured shipping for items above PKR 3,000.' },
+    { title: 'Refund Processing', content: 'Once we receive and inspect your return, we will process your refund within 5-7 business days. EasyPaisa transfers are typically refunded within 24 hours. For Cash on Delivery orders, refunds are processed via EasyPaisa transfer to your registered phone number.' },
+    { title: 'Non-Returnable Items', content: 'For health and safety reasons, the following items cannot be returned once opened: skincare products with broken seals, makeup that has been used, fragrance bottles, intimate hygiene products, and items marked as final sale. Gift cards and clearance items are also non-returnable.' },
+    { title: 'Exchanges', content: 'We are happy to exchange items for a different shade, size, or product of equal value, subject to availability. Exchanges follow the same eligibility rules as returns. Any price difference will be charged or refunded as applicable.' },
+    { title: 'Contact for Returns', content: 'Returns and exchanges: returns@saffronco.pk · WhatsApp: 0344-4183049 · Pickup address: Office 3A, Paradise Apartment, Gujju Matta, Ferozpur Road, Lahore.' },
+  ]
+  return (
+    <div className="pt-24 pb-20 bg-cream">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="mb-12 reveal">
+          <p className="font-body text-xs text-saffron uppercase tracking-[0.3em] mb-3">Customer Care</p>
+          <h1 className="font-display text-5xl text-bark font-300 mb-4">Returns &amp; Exchanges</h1>
+          <p className="font-body text-sm text-bark/40">7-day window. Easy process. No surprises.</p>
+          <div className="w-12 h-px bg-saffron mt-6" />
+        </div>
+        <p className="font-body text-bark/55 leading-relaxed mb-10 reveal">We want you to love everything you buy from Saffron &amp; Co. If something isn't right, we're here to help. Please read through our return policy below — and if you have any questions, just reach out.</p>
+        <div className="space-y-8">
+          {sections.map((s, i) => (
+            <div key={s.title} className={`reveal delay-${(i % 4) + 1}`}>
+              <h2 className="font-display text-xl text-bark mb-3">{i + 1}. {s.title}</h2>
+              <p className="font-body text-sm text-bark/55 leading-relaxed">{s.content}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ─────────────────────────────────────────────────────
+   SHIPPING INFO PAGE
+───────────────────────────────────────────────────── */
+function ShippingPage() {
+  useReveal()
+  const sections = [
+    { title: 'Delivery Areas', content: 'We deliver across Pakistan to all major cities including Lahore, Karachi, Islamabad, Rawalpindi, Faisalabad, Multan, Peshawar, Quetta, Hyderabad, Sialkot, and surrounding regions. For very remote areas, please contact us before ordering to confirm courier availability.' },
+    { title: 'Delivery Timeline', content: 'Orders typically reach you within 2-4 business days after dispatch. Lahore: 1-2 business days. Other major cities (Karachi, Islamabad, Faisalabad, Multan): 2-3 business days. Smaller cities and remote areas: 3-5 business days. Orders placed on Sundays or public holidays are processed on the next business day.' },
+    { title: 'Shipping Charges', content: 'Standard shipping is PKR 200 across Pakistan. Orders above PKR 4,000 qualify for free delivery. Charges are calculated automatically at checkout based on your order total.' },
+    { title: 'Courier Partners', content: 'We ship via TCS Express and Leopards Courier, depending on your location. Both partners provide tracking, SMS updates, and reliable doorstep delivery. Once your order is dispatched, you will receive your tracking number via SMS and on your account page.' },
+    { title: 'Order Tracking', content: 'After dispatch, visit your account page (My Orders) and enter your phone number to see your order status and tracking link. You can also track directly on the TCS or Leopards website using the tracking number we send you.' },
+    { title: 'Payment Options', content: 'EasyPaisa Transfer: Send payment to "Saffron & Company" (0344-4183049) and share your Transaction ID at checkout. Cash on Delivery (COD): Pay when your order arrives — available across Pakistan. EasyPaisa orders are dispatched faster as we verify payment before processing.' },
+    { title: 'Failed Deliveries', content: 'If the courier is unable to deliver after 2-3 attempts (no one available, wrong address, refused delivery), your parcel will be returned to us. We will contact you to either re-dispatch (additional shipping fee may apply) or process a refund minus the original shipping cost.' },
+    { title: 'Delivery Concerns', content: 'For delivery-related questions: orders@saffronco.pk · WhatsApp: 0344-4183049 · Mon-Sat, 9am-6pm PKT. We respond to most queries within 24 hours.' },
+  ]
+  return (
+    <div className="pt-24 pb-20 bg-cream">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="mb-12 reveal">
+          <p className="font-body text-xs text-saffron uppercase tracking-[0.3em] mb-3">Customer Care</p>
+          <h1 className="font-display text-5xl text-bark font-300 mb-4">Shipping Information</h1>
+          <p className="font-body text-sm text-bark/40">Fast, tracked delivery across Pakistan.</p>
+          <div className="w-12 h-px bg-saffron mt-6" />
+        </div>
+        <p className="font-body text-bark/55 leading-relaxed mb-10 reveal">All Saffron &amp; Co orders ship from Lahore via trusted courier partners. Here's everything you need to know about delivery times, charges, and tracking.</p>
         <div className="space-y-8">
           {sections.map((s, i) => (
             <div key={s.title} className={`reveal delay-${(i % 4) + 1}`}>
@@ -1746,6 +1892,8 @@ function Storefront() {
         {page === 'contact'     && <ContactPage />}
         {page === 'privacy'     && <PrivacyPage />}
         {page === 'terms'       && <TermsPage />}
+        {page === 'returns'     && <ReturnsPage />}
+        {page === 'shipping'    && <ShippingPage />}
         {page === 'category' && currentCategory && (
           <CategoryDetailPage
             category={currentCategory}

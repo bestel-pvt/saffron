@@ -217,11 +217,22 @@ function abbreviateName(fullName) {
   return `${parts[0]} ${parts[parts.length - 1][0].toUpperCase()}.`
 }
 
+// Normalize Pakistani phone: strip non-digits, strip leading 0 or 92 country code.
+// "03001234567" → "3001234567"
+// "+92 300 1234567" → "3001234567"
+// "923001234567" → "3001234567"
+function normalizePhone(phone) {
+  let p = String(phone || '').replace(/\D/g, '')
+  if (p.startsWith('92') && p.length === 12) p = p.slice(2)
+  else if (p.startsWith('0') && p.length === 11) p = p.slice(1)
+  return p
+}
+
 export async function createReview(input) {
   const d = await getDb()
-  const phone = String(input.customerPhone || '').replace(/\D/g, '')
+  const phone = normalizePhone(input.customerPhone)
   const matchingOrders = d.data.orders.filter(o =>
-    String(o.customer?.phone || '').replace(/\D/g, '') === phone
+    normalizePhone(o.customer?.phone) === phone
   )
 
   if (matchingOrders.length === 0) {
@@ -239,7 +250,7 @@ export async function createReview(input) {
 
   const existing = d.data.reviews.find(r =>
     String(r.productId) === String(input.productId) &&
-    String(r.customerPhone || '').replace(/\D/g, '') === phone
+    normalizePhone(r.customerPhone) === phone
   )
   if (existing) throw new Error('You have already reviewed this product')
 

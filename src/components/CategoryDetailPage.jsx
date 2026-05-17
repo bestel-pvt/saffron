@@ -52,12 +52,14 @@ function ProductCard({ p, onAdd, wishlist, onWish, onView }) {
       </div>
       <div className="mt-3 px-1 space-y-0.5 cursor-pointer" onClick={onView}>
         <p className="font-display text-lg text-bark leading-tight hover:text-saffron transition-colors">{p.name}</p>
-        <p className="font-body text-xs text-bark/40">{p.subcategory}</p>
-        <span className="flex gap-0.5">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <Star key={i} size={10} className={i < Math.floor(p.rating) ? 'fill-saffron text-saffron' : 'text-bark/15'} />
-          ))}
-        </span>
+        <p className="font-body text-xs text-bark/40">{p.subcategory || p.cat}</p>
+        {p.rating != null && (
+          <span className="flex gap-0.5">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} size={10} className={i < Math.floor(p.rating) ? 'fill-saffron text-saffron' : 'text-bark/15'} />
+            ))}
+          </span>
+        )}
         <div className="flex items-center gap-2 pt-0.5">
           <span className="font-body font-500 text-sm text-bark">PKR {p.price.toLocaleString()}</span>
           {p.originalPrice && (
@@ -73,7 +75,9 @@ export default function CategoryDetailPage({ category, allProducts, navigate, on
   const [subFilter, setSubFilter] = useState('All')
 
   const categoryProducts = allProducts.filter(p => p.cat === category.name)
-  const filtered = subFilter === 'All'
+  // Only show subcategory filter if at least some products have a subcategory field
+  const hasSubcategories = categoryProducts.some(p => p.subcategory)
+  const filtered = (subFilter === 'All' || !hasSubcategories)
     ? categoryProducts
     : categoryProducts.filter(p => p.subcategory === subFilter)
 
@@ -98,22 +102,24 @@ export default function CategoryDetailPage({ category, allProducts, navigate, on
 
       {/* Products Section */}
       <div className="max-w-7xl mx-auto px-6 py-14">
-        {/* Subcategory Filters */}
-        <div className="flex flex-wrap gap-2 mb-6">
-          {['All', ...category.items].map(sub => (
-            <button
-              key={sub}
-              onClick={() => setSubFilter(sub)}
-              className={`px-5 py-2 font-body text-sm rounded-full border transition-all ${
-                subFilter === sub
-                  ? 'bg-saffron text-white border-saffron'
-                  : 'border-bark/15 text-bark/55 hover:border-saffron hover:text-saffron'
-              }`}
-            >
-              {sub}
-            </button>
-          ))}
-        </div>
+        {/* Subcategory Filters — only show if products have subcategory data */}
+        {hasSubcategories && (
+          <div className="flex flex-wrap gap-2 mb-6">
+            {['All', ...category.items].map(sub => (
+              <button
+                key={sub}
+                onClick={() => setSubFilter(sub)}
+                className={`px-5 py-2 font-body text-sm rounded-full border transition-all ${
+                  subFilter === sub
+                    ? 'bg-saffron text-white border-saffron'
+                    : 'border-bark/15 text-bark/55 hover:border-saffron hover:text-saffron'
+                }`}
+              >
+                {sub}
+              </button>
+            ))}
+          </div>
+        )}
 
         <p className="font-body text-xs text-bark/30 mb-10">
           {filtered.length} product{filtered.length !== 1 ? 's' : ''}
