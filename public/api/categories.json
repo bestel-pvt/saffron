@@ -1,0 +1,155 @@
+{
+  "data": [
+    {
+      "name": "Skincare",
+      "sub": "Serums, Moisturisers & More",
+      "count": 15,
+      "color": "#E8C4A8",
+      "img": "https://images.unsplash.com/photo-1665763630810-e6251bdd392d?w=700&auto=format&fit=crop",
+      "items": [
+        "Serums",
+        "Moisturisers",
+        "Masks",
+        "Toners",
+        "Cleansers",
+        "Eye Care",
+        "SPF"
+      ]
+    },
+    {
+      "name": "Makeup",
+      "sub": "Foundation, Lips & Eyes",
+      "count": 15,
+      "color": "#F0DDD0",
+      "img": "https://images.unsplash.com/photo-1617176892739-98fc49fdcbe7?w=700&auto=format&fit=crop",
+      "items": [
+        "Foundation",
+        "Lip Colour",
+        "Eyes",
+        "Cheeks",
+        "Face",
+        "Lip Gloss"
+      ]
+    },
+    {
+      "name": "Fragrance",
+      "sub": "Perfumes, Attars & Body Mists",
+      "count": 5,
+      "color": "#D4A8C4",
+      "img": "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?w=700&auto=format&fit=crop",
+      "items": [
+        "Eau de Parfum",
+        "Attars",
+        "Body Mists",
+        "Oud"
+      ]
+    },
+    {
+      "name": "Hair Care",
+      "sub": "Masks, Oils & Treatments",
+      "count": 7,
+      "color": "#C8D4A8",
+      "img": "https://images.unsplash.com/photo-1610705267928-1b9f2fa7f1c5?w=700&auto=format&fit=crop",
+      "items": [
+        "Masks",
+        "Oils",
+        "Shampoo",
+        "Conditioner",
+        "Serums"
+      ]
+    },
+    {
+      "name": "Body Care",
+      "sub": "Lotions, Scrubs & Oils",
+      "count": 8,
+      "color": "#A8C8D4",
+      "img": "https://images.unsplash.com/photo-1498843053639-170ff2122f35?w=700&auto=format&fit=crop",
+      "items": [
+        "Lotions",
+        "Scrubs",
+        "Body Oils",
+        "Butters"
+      ]
+    },
+    {
+      "name": "Lip Care",
+      "sub": "Balms, Oils & Treatments",
+      "count": 15,
+      "color": "#D4A8A8",
+      "img": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=700&auto=format&fit=crop",
+      "items": [
+        "Balms",
+        "Lip Oils",
+        "Glosses",
+        "Treatments"
+      ]
+    },
+    {
+      "name": "Eye Care",
+      "sub": "Creams, Serums & Patches",
+      "count": 15,
+      "color": "#B8C8E8",
+      "img": "https://images.unsplash.com/photo-1643379855542-82c0c7483f3a?w=700&auto=format&fit=crop",
+      "items": [
+        "Eye Creams",
+        "Serums",
+        "Patches",
+        "Masks"
+      ]
+    },
+    {
+      "name": "Men's Grooming",
+      "sub": "Face, Beard & Body",
+      "count": 8,
+      "color": "#C4C8B8",
+      "img": "https://images.unsplash.com/photo-1532710093739-9470acff878f?w=700&auto=format&fit=crop",
+      "items": [
+        "Face Wash",
+        "Beard Oil",
+        "Moisturiser",
+        "After Shave"
+      ]
+    },
+    {
+      "name": "Wellness",
+      "sub": "Supplements & Inner Beauty",
+      "count": 15,
+      "color": "#D8C8A8",
+      "img": "https://images.unsplash.com/photo-1732900293895-233f769299b3?w=700&auto=format&fit=crop",
+      "items": [
+        "Supplements",
+        "Teas",
+        "Aromatherapy",
+        "Wellness Kits"
+      ]
+    },
+    {
+      "name": "Tools & Accessories",
+      "sub": "Brushes, Rollers & More",
+      "count": 15,
+      "color": "#C8D8C8",
+      "img": "https://images.unsplash.com/photo-1583241800806-1ab2556fabd0?w=700&auto=format&fit=crop",
+      "items": [
+        "Brushes",
+        "Rollers",
+        "Gua Sha",
+        "Applicators"
+      ]
+    },
+    {
+      "name": "Gift Sets",
+      "sub": "Curated Collections & Hampers",
+      "count": 5,
+      "color": "#D4C8B8",
+      "img": "https://images.unsplash.com/photo-1574885914529-e157b2664e4c?w=700&auto=format&fit=crop",
+      "items": [
+        "Skincare Sets",
+        "Makeup Kits",
+        "Fragrance Sets",
+        "Hampers"
+      ]
+    }
+  ],
+  "count": 11,
+  "updated": "2026-05-11T15:55:01.377Z"
+}

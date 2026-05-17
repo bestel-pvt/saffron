@@ -1,0 +1,244 @@
+- generic [ref=e4]:
+  - navigation [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "Unsplash Home" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "Unsplash Home" [ref=e9]
+        - link "Photos" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - img [ref=e12]
+        - link "Illustrations" [ref=e14] [cursor=pointer]:
+          - /url: /illustrations
+          - img [ref=e15]
+      - generic [ref=e17]:
+        - button "Explore" [ref=e18] [cursor=pointer]:
+          - img [ref=e19]
+        - button "Collections" [ref=e21] [cursor=pointer]:
+          - img [ref=e22]
+        - button "Download History" [ref=e24] [cursor=pointer]:
+          - img [ref=e25]
+      - button "Bookmarks" [ref=e28] [cursor=pointer]:
+        - img [ref=e29]
+    - generic [ref=e31]:
+      - link "Log in / Sign up" [ref=e32] [cursor=pointer]:
+        - /url: /login?referrer=%2Fs%2Fphotos%2Fskincare-serum-bottle
+        - img [ref=e33]
+      - button "Language" [ref=e35] [cursor=pointer]:
+        - img [ref=e36]
+      - button "Menu" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+  - generic [ref=e41]:
+    - generic [ref=e42]:
+      - navigation [ref=e43]:
+        - search "Find visuals sitewide" [ref=e45]:
+          - button "Search Unsplash" [ref=e46] [cursor=pointer]:
+            - img [ref=e47]
+          - combobox [ref=e49]:
+            - searchbox "Search Unsplash" [ref=e50]: skincare serum bottle
+            - listbox
+          - button "Clear" [ref=e51] [cursor=pointer]:
+            - img [ref=e52]
+          - button "Visual search" [ref=e56] [cursor=pointer]:
+            - img [ref=e57]
+        - generic [ref=e59]:
+          - link "Get Unsplash+" [ref=e60] [cursor=pointer]:
+            - /url: /plus
+          - link "Log in" [ref=e61] [cursor=pointer]:
+            - /url: /login?referrer=%2Fs%2Fphotos%2Fskincare-serum-bottle
+        - button "Submit an image" [ref=e63] [cursor=pointer]
+      - generic [ref=e64]:
+        - generic [ref=e70]:
+          - list [ref=e71]:
+            - listitem [ref=e72]:
+              - link "Photos 4.5k":
+                - /url: /s/photos/skincare-serum-bottle
+                - img
+                - text: Photos
+                - generic: 4.5k
+            - listitem [ref=e73]:
+              - link "Illustrations 289" [ref=e74] [cursor=pointer]:
+                - /url: /s/illustrations/skincare-serum-bottle
+                - img [ref=e75]
+                - text: Illustrations
+                - generic [ref=e77]: "289"
+            - listitem [ref=e78]:
+              - button "More" [ref=e79] [cursor=pointer]
+          - button "Filters" [ref=e81] [cursor=pointer]:
+            - img [ref=e83]
+            - text: Filters
+        - generic [ref=e85]:
+          - heading "Skincare serum bottle" [level=1] [ref=e87]
+          - generic [ref=e91]:
+            - link "cosmetic" [ref=e93] [cursor=pointer]:
+              - /url: /s/photos/cosmetic
+            - link "skincare" [ref=e95] [cursor=pointer]:
+              - /url: /s/photos/skincare
+            - link "serum" [ref=e97] [cursor=pointer]:
+              - /url: /s/photos/serum
+            - link "grey" [ref=e99] [cursor=pointer]:
+              - /url: /s/photos/grey
+            - link "wellness" [ref=e101] [cursor=pointer]:
+              - /url: /s/photos/wellness
+            - link "beauty" [ref=e103] [cursor=pointer]:
+              - /url: /s/photos/beauty
+            - link "product" [ref=e105] [cursor=pointer]:
+              - /url: /s/photos/product
+            - link "skincare product" [ref=e107] [cursor=pointer]:
+              - /url: /s/photos/skincare-product
+            - link "beauty product" [ref=e109] [cursor=pointer]:
+              - /url: /s/photos/beauty-product
+            - link "skin" [ref=e111] [cursor=pointer]:
+              - /url: /s/photos/skin
+            - link "beauty industry" [ref=e113] [cursor=pointer]:
+              - /url: /s/photos/beauty-industry
+            - link "anti aging" [ref=e115] [cursor=pointer]:
+              - /url: /s/photos/anti-aging
+        - generic [ref=e117]:
+          - generic [ref=e121]:
+            - generic [ref=e122]:
+              - figure [ref=e123]:
+                - link "a hand holding a small bottle of liquid" [ref=e126]:
+                  - /url: /photos/a-hand-holding-a-small-bottle-of-liquid-OeU6dAE5Y4E
+                  - img "a hand holding a small bottle of liquid" [ref=e127]
+              - generic [ref=e128]:
+                - heading "Sponsored images" [level=4] [ref=e129]:
+                  - generic [ref=e130]: Sponsored images
+                  - link [ref=e131] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fskincare-serum-bottle&utm_term=skincare+serum+bottle%3A%3A%3A%3A&phrase=skincare+serum+bottle&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+                    - img [ref=e132]
+                - generic [ref=e134]:
+                  - link "Bottle of serum in women's hands. Glass bottle with dropper cap in women's hands. Amber glass container with dropper lid for cosmetic products on brown background in sunlight" [ref=e135] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/bottle-of-serum-in-womens-hands-glass-bottle-with-dropper-cap-in-womens-hands-amber-gm1432129227-474493116?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fskincare-serum-bottle&utm_term=skincare+serum+bottle%3A%3A%3A%3A
+                    - img "Bottle of serum in women's hands. Glass bottle with dropper cap in women's hands. Amber glass container with dropper lid for cosmetic products on brown background in sunlight" [ref=e136]
+                  - link "Blank transparent and amber glass dropper bottle white label mockup" [ref=e137] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/blank-transparent-and-amber-glass-dropper-bottle-white-label-mockup-gm1772297748-545947483?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fskincare-serum-bottle&utm_term=skincare+serum+bottle%3A%3A%3A%3A
+                    - img "Blank transparent and amber glass dropper bottle white label mockup" [ref=e138]
+                  - link "Push dispenser liquid facial fluid gel squeezed out to hand." [ref=e139] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/push-dispenser-liquid-facial-fluid-gel-squeezed-out-to-hand-gm1389146537-446542030?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fskincare-serum-bottle&utm_term=skincare+serum+bottle%3A%3A%3A%3A
+                    - img "Push dispenser liquid facial fluid gel squeezed out to hand." [ref=e140]
+                  - link "The rock podium lays on grass, features a serum bottle without label above, over light green background. Mock up for designing with front shot and empty space for adding text" [ref=e141] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/the-rock-podium-lays-on-grass-features-a-serum-bottle-without-label-above-over-light-gm2156582362-577335681?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fskincare-serum-bottle&utm_term=skincare+serum+bottle%3A%3A%3A%3A
+                    - img "The rock podium lays on grass, features a serum bottle without label above, over light green background. Mock up for designing with front shot and empty space for adding text" [ref=e142]
+                - link "Get 20% off with code UNSPLASH20" [ref=e143] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fskincare-serum-bottle&utm_term=skincare+serum+bottle%3A%3A%3A%3A&phrase=skincare+serum+bottle&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+              - figure [ref=e144]:
+                - link "A woman holding a car key to her head" [ref=e147]:
+                  - /url: /photos/a-woman-holding-a-car-key-to-her-head-15sEW9QHFXE
+                  - img "A woman holding a car key to her head" [ref=e148]
+              - figure [ref=e149]:
+                - link "a person holding a small bottle of liquid" [ref=e152]:
+                  - /url: /photos/a-person-holding-a-small-bottle-of-liquid-YKD0gtNe3xA
+                  - img "a person holding a small bottle of liquid" [ref=e153]
+              - figure [ref=e154]:
+                - link "a bottle of perfume on a table" [ref=e157]:
+                  - /url: /photos/a-bottle-of-perfume-on-a-table-D44p6Ubx-9E
+                  - img "a bottle of perfume on a table" [ref=e158]
+              - figure [ref=e159]:
+                - link "white and black disposable lighter" [ref=e162]:
+                  - /url: /photos/white-and-black-disposable-lighter-h2KvNlgkA1w
+                  - img "white and black disposable lighter" [ref=e163]
+              - figure [ref=e164]:
+                - link "a bottle of lotion on an orange background" [ref=e167]:
+                  - /url: /photos/a-bottle-of-lotion-on-an-orange-background-gUZv1Fdkfgw
+                  - img "a bottle of lotion on an orange background" [ref=e168]
+            - generic [ref=e169]:
+              - figure [ref=e170]:
+                - link "a glass bottle with a liquid inside of it" [ref=e173]:
+                  - /url: /photos/a-glass-bottle-with-a-liquid-inside-of-it--bRyA4PRPKg
+                  - img "a glass bottle with a liquid inside of it" [ref=e174]
+              - figure [ref=e175]:
+                - link "a bottle of liquid with a dropper on a yellow background" [ref=e178]:
+                  - /url: /photos/a-bottle-of-liquid-with-a-dropper-on-a-yellow-background-GjJZ5HBl2qQ
+                  - img "a bottle of liquid with a dropper on a yellow background" [ref=e179]
+              - figure [ref=e180]:
+                - link "a glass bottle with a black top and a silver cap" [ref=e183]:
+                  - /url: /photos/a-glass-bottle-with-a-black-top-and-a-silver-cap-gtxxkGEoaBM
+                  - img "a glass bottle with a black top and a silver cap" [ref=e184]
+              - figure [ref=e185]:
+                - link "a bottle of black ink with a feather on it" [ref=e188]:
+                  - /url: /photos/a-bottle-of-black-ink-with-a-feather-on-it-PWPe-x1Ygtw
+                  - img "a bottle of black ink with a feather on it" [ref=e189]
+              - figure [ref=e190]:
+                - link "a bottle of perfume" [ref=e193]:
+                  - /url: /photos/a-bottle-of-perfume-k6TcBM1tKFE
+                  - img "a bottle of perfume" [ref=e194]
+              - figure [ref=e195]:
+                - link "a dropper filled with a liquid sitting on top of a table" [ref=e198]:
+                  - /url: /photos/a-dropper-filled-with-a-liquid-sitting-on-top-of-a-table-BccmgY_t6ss
+                  - img "a dropper filled with a liquid sitting on top of a table" [ref=e199]
+              - figure [ref=e200]:
+                - link "a dropper bottle filled with a drop of liquid" [ref=e203]:
+                  - /url: /photos/a-dropper-bottle-filled-with-a-drop-of-liquid-nC9rUC7Oyfk
+                  - img "a dropper bottle filled with a drop of liquid" [ref=e204]
+            - generic [ref=e205]:
+              - contentinfo [ref=e210]:
+                - generic [ref=e216]: –– ––– ––– –– ––– – ––– ––– –––– – – –– ––– – – ––– –– –– –––– ––
+              - figure [ref=e218]:
+                - link "black and orange bottle beside white round container" [ref=e221]:
+                  - /url: /photos/black-and-orange-bottle-beside-white-round-container-W71jxsXrwyQ
+                  - img "black and orange bottle beside white round container" [ref=e222]
+              - figure [ref=e223]:
+                - link "white drop bottle on white surface" [ref=e226]:
+                  - /url: /photos/white-drop-bottle-on-white-surface-WdJ4WnLxyDs
+                  - img "white drop bottle on white surface" [ref=e227]
+              - figure [ref=e228]:
+                - link "white plastic bottle on white table" [ref=e231]:
+                  - /url: /photos/white-plastic-bottle-on-white-table-A-eV95evtV8
+                  - img "white plastic bottle on white table" [ref=e232]
+              - figure [ref=e233]:
+                - link "person holding small clear drop bottle" [ref=e236]:
+                  - /url: /photos/person-holding-small-clear-drop-bottle-iZlMuVu9luM
+                  - img "person holding small clear drop bottle" [ref=e237]
+              - figure [ref=e238]:
+                - link "a bottle of lotion sitting next to a tube of lotion" [ref=e241]:
+                  - /url: /photos/a-bottle-of-lotion-sitting-next-to-a-tube-of-lotion-l-Wq3griIaw
+                  - img "a bottle of lotion sitting next to a tube of lotion" [ref=e242]
+              - figure [ref=e243]:
+                - link "a gold and black gavel" [ref=e246]:
+                  - /url: /photos/a-gold-and-black-gavel-Fo7hpQelPkQ
+                  - img "a gold and black gavel" [ref=e247]
+              - figure [ref=e248]:
+                - link "Skincare serum bottle and dropper on a pink surface." [ref=e251]:
+                  - /url: /photos/skincare-serum-bottle-and-dropper-on-a-pink-surface-BlcA2-o-7IM
+                  - img "Skincare serum bottle and dropper on a pink surface." [ref=e252]
+          - generic [ref=e255]:
+            - heading "Browse premium images on iStock | Claim your discount now" [level=2] [ref=e256]:
+              - text: Browse premium images on iStock
+              - generic [ref=e257]: "| Claim your discount now"
+            - generic [ref=e259]:
+              - link "Cosmetic essence in glass bottle with pipette in transparent water with bubbles" [ref=e260] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/cosmetic-essence-in-glass-bottle-with-pipette-in-transparent-water-with-bubbles-gm2054223203-563494364?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fskincare-serum-bottle&utm_term=skincare+serum+bottle%3A%3A%3A%3A
+                - img "Cosmetic essence in glass bottle with pipette in transparent water with bubbles" [ref=e261]
+              - link "serum on a beige background with natural sunlight" [ref=e262] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/serum-on-a-beige-background-with-natural-sunlight-gm1400020930-453718185?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fskincare-serum-bottle&utm_term=skincare+serum+bottle%3A%3A%3A%3A
+                - img "serum on a beige background with natural sunlight" [ref=e263]
+              - link "Cosmetic pipette with a drop close up on white background" [ref=e264] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/cosmetic-pipette-with-a-drop-close-up-on-white-background-gm857148374-141457659?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fskincare-serum-bottle&utm_term=skincare+serum+bottle%3A%3A%3A%3A
+                - img "Cosmetic pipette with a drop close up on white background" [ref=e265]
+              - link "Pink beauty face oil dripping from gold dropper on blue background. Skin care cosmetic advertisement with copy space" [ref=e266] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/pink-beauty-face-oil-dripping-from-gold-dropper-on-blue-background-skin-care-gm1364936706-435968235?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fskincare-serum-bottle&utm_term=skincare+serum+bottle%3A%3A%3A%3A
+                - img "Pink beauty face oil dripping from gold dropper on blue background. Skin care cosmetic advertisement with copy space" [ref=e267]
+              - link "Skin care essence, emulsion or serum in glass transparent bottle with dropper" [ref=e268] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/skin-care-essence-emulsion-or-serum-in-glass-transparent-bottle-with-dropper-gm1367197392-437526688?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fskincare-serum-bottle&utm_term=skincare+serum+bottle%3A%3A%3A%3A
+                - img "Skin care essence, emulsion or serum in glass transparent bottle with dropper" [ref=e269]
+              - link "SPA natural organic cosmetics packaging design. Set of transparent glass bottles, moisturizer cream in wooden jars. Tree branch, birch bark and moss on background." [ref=e270] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/spa-natural-organic-cosmetics-packaging-design-set-of-transparent-glass-bottles-gm1400306506-453925913?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fskincare-serum-bottle&utm_term=skincare+serum+bottle%3A%3A%3A%3A
+                - img "SPA natural organic cosmetics packaging design. Set of transparent glass bottles, moisturizer cream in wooden jars. Tree branch, birch bark and moss on background." [ref=e271]
+              - link "Glass dropper bottle cosmetic oil or serum mock up banner. Realistic vial with pipette for medical drops, clear container collagen essence on isolated beige background, product ad 3d illustration" [ref=e272] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/glass-dropper-bottle-cosmetic-oil-or-serum-mock-up-banner-realistic-vial-with-gm1328483384-412521164?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fskincare-serum-bottle&utm_term=skincare+serum+bottle%3A%3A%3A%3A
+                - img "Glass dropper bottle cosmetic oil or serum mock up banner. Realistic vial with pipette for medical drops, clear container collagen essence on isolated beige background, product ad 3d illustration" [ref=e273]
+              - generic [ref=e274]:
+                - link "Empty bottle of skincare product, serum on gray background with wooden deco. Creative still life with a beauty product." [ref=e275] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/photo/empty-bottle-of-skincare-product-serum-on-gray-background-with-wooden-deco-creative-gm2158083572-578737699?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fskincare-serum-bottle&utm_term=skincare+serum+bottle%3A%3A%3A%3A
+                  - img "Empty bottle of skincare product, serum on gray background with wooden deco. Creative still life with a beauty product." [ref=e276]
+                - link "View more on iStock ↗" [ref=e277] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fskincare-serum-bottle&utm_term=skincare+serum+bottle%3A%3A%3A%3A&phrase=skincare+serum+bottle&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+          - button "Load more" [ref=e281] [cursor=pointer]
+          - generic [ref=e282]:
+            - link [ref=e283] [cursor=pointer]:
+              - /url: /
+              - img [ref=e284]
+            - paragraph [ref=e286]: Make something awesome
+    - generic:
+      - region "Notifications"
