@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from 'react'
-import { useNavigate as useRouterNavigate, useLocation } from 'react-router-dom'
+import { useState, useEffect, useRef, useMemo } from 'react'
+import { useNavigate as useRouterNavigate, useLocation, Routes, Route } from 'react-router-dom'
 import {
   ShoppingBag, Heart, Search, Menu, X, ArrowRight, ChevronRight,
   Star, Truck, RefreshCw, Shield, ChevronDown,
   Check, MapPin, Phone, User, Leaf, Droplets, Sun, Sparkles,
-  Package, UserCircle2, ClipboardList, Mail, FileText,
+  Package, UserCircle2, ClipboardList, Mail, FileText, Loader2, Upload, AlertCircle,
 } from 'lucide-react'
 import { ALL_PRODUCTS, CATEGORIES_DATA, TESTIMONIALS, CITIES } from './data.js'
 import CategoryDetailPage from './components/CategoryDetailPage.jsx'
@@ -12,7 +12,7 @@ import ProductDetailPage from './components/ProductDetailPage.jsx'
 import Invoice from './components/Invoice.jsx'
 import ToastContainer, { toast } from './components/Toast.jsx'
 import CookieBanner from './components/CookieBanner.jsx'
-import { fetchProducts, fetchCategories } from './api.js'
+import { fetchProducts, fetchCategories, placeOrder as apiPlaceOrder, uploadPaymentProof, trackOrdersByPhone, getProductOverrides } from './api.js'
 import {
   loadCart, saveCart, clearCart,
   loadWishlist, saveWishlist,
@@ -20,6 +20,15 @@ import {
   loadCustomer, saveCustomer,
   nextOrderNumber,
 } from './utils/storage.js'
+import AdminGuard from './admin/AdminGuard.jsx'
+import AdminLogin from './admin/AdminLogin.jsx'
+import AdminDashboard from './admin/AdminDashboard.jsx'
+import AdminOrders from './admin/AdminOrders.jsx'
+import AdminOrderDetail from './admin/AdminOrderDetail.jsx'
+import AdminCustomers from './admin/AdminCustomers.jsx'
+import AdminStock from './admin/AdminStock.jsx'
+import AdminReviews from './admin/AdminReviews.jsx'
+import AdminProducts from './admin/AdminProducts.jsx'
 
 /* ─────────────────────────────────────────────────────
    URL ROUTING HELPERS
@@ -280,7 +289,12 @@ function CheckoutModal({ items, onClose, onSuccess }) {
   })
   const [easyTid, setEasyTid] = useState('')
   const [copied, setCopied] = useState(false)
-  const [orderNum] = useState(() => nextOrderNumber())
+  const [placing, setPlacing] = useState(false)
+  const [placeError, setPlaceError] = useState(null)
+  const [placedOrder, setPlacedOrder] = useState(null)
+  const [proofFile, setProofFile] = useState(null)
+  const [uploadingProof, setUploadingProof] = useState(false)
+  const [proofUploaded, setProofUploaded] = useState(false)
 
   const copyAccount = () => {
     if (typeof navigator !== 'undefined' && navigator.clipboard) {
@@ -296,24 +310,63 @@ function CheckoutModal({ items, onClose, onSuccess }) {
   const grand = subtotal + delivery
   const set = (k, v) => setForm(f => ({ ...f, [k]: v }))
 
-  const placeOrder = () => {
-    const order = {
-      orderNumber: orderNum,
-      items,
-      customer: { name: form.name, phone: '+92 ' + form.phone, city: form.city, address: form.address },
-      payment: form.payment,
-      easyTid: form.payment === 'easypaisa' ? easyTid.trim() : '',
-      subtotal,
-      delivery,
-      total: grand,
-      createdAt: new Date().toISOString(),
-      status: 'confirmed',
+  const placeOrder = async () => {
+    setPlacing(true); setPlaceError(null)
+    try {
+      const order = await apiPlaceOrder({
+        items: items.map(it => ({
+          id: it.id, name: it.name, cat: it.cat, price: it.price,
+          quantity: it.qty || 1, img: it.img, size: it.size,
+        })),
+        customer: {
+          name: form.name,
+          phone: '+92 ' + form.phone,
+          city: form.city,
+          address: form.address,
+        },
+        payment: form.payment,
+        easyTid: form.payment === 'easypaisa' ? easyTid.trim() : '',
+        subtotal, delivery, total: grand,
+      })
+      // Cache locally too so the user can see their orders in Account even offline
+      saveOrder(order)
+      decrementStock(items)
+      saveCustomer({ name: form.name, phone: form.phone, city: form.city, address: form.address })
+      setPlacedOrder(order)
+      if (form.payment === 'easypaisa') {
+        setStep(5) // proof upload step
+      } else {
+        setStep(4) // success
+        onSuccess(order)
+      }
+    } catch (err) {
+      setPlaceError(err.message || 'Failed to place order. Please try again.')
+    } finally {
+      setPlacing(false)
     }
-    saveOrder(order)
-    decrementStock(items)
-    saveCustomer({ name: form.name, phone: form.phone, city: form.city, address: form.address })
+  }
+
+  const submitProof = async () => {
+    if (!proofFile || !placedOrder) return
+    setUploadingProof(true); setPlaceError(null)
+    try {
+      await uploadPaymentProof(placedOrder.orderNumber, proofFile)
+      setProofUploaded(true)
+      setTimeout(() => {
+        setStep(4)
+        onSuccess(placedOrder)
+      }, 800)
+    } catch (err) {
+      setPlaceError(err.message || 'Upload failed')
+    } finally {
+      setUploadingProof(false)
+    }
+  }
+
+  const skipProof = () => {
+    if (!window.confirm("Skip proof upload? You'll need to send it via WhatsApp to 0344-4183049 before we can confirm.")) return
     setStep(4)
-    onSuccess(order)
+    onSuccess(placedOrder)
   }
 
   const StepDot = ({ n }) => (
@@ -325,7 +378,7 @@ function CheckoutModal({ items, onClose, onSuccess }) {
     </div>
   )
 
-  const canPay = form.payment === 'cod' || form.payment === 'easypaisa'
+  const canPay = form.payment === 'cod' || (form.payment === 'easypaisa' && easyTid.trim().length >= 6)
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -460,12 +513,21 @@ function CheckoutModal({ items, onClose, onSuccess }) {
                   </div>
                   <div>
                     <label className="font-body text-[11px] text-bark/40 uppercase tracking-widest block mb-1.5">
-                      Transaction ID (TID) <span className="text-bark/25 normal-case tracking-normal">— optional</span>
+                      Transaction ID (TID) <span className="text-red-500 normal-case tracking-normal">*required</span>
                     </label>
                     <input type="text" placeholder="e.g. 1234567890" value={easyTid} onChange={e => setEasyTid(e.target.value)}
-                      className="w-full bg-white border border-bark/12 focus:border-saffron/50 rounded-xl px-4 py-3 font-body text-sm text-bark placeholder:text-bark/20 outline-none transition-colors" />
+                      className={`w-full bg-white border rounded-xl px-4 py-3 font-body text-sm text-bark placeholder:text-bark/20 outline-none transition-colors ${
+                        easyTid.trim().length === 0
+                          ? 'border-bark/12 focus:border-saffron/50'
+                          : easyTid.trim().length < 6
+                            ? 'border-red-300 focus:border-red-400'
+                            : 'border-green-300 focus:border-green-400'
+                      }`} />
+                    {easyTid.trim().length > 0 && easyTid.trim().length < 6 && (
+                      <p className="font-body text-xs text-red-600 mt-1.5">TID must be at least 6 characters</p>
+                    )}
                     <p className="font-body text-xs text-bark/40 mt-1.5 leading-relaxed">
-                      Once your transfer is verified, we'll dispatch your order. You can also send the TID to <span className="text-bark/60 font-500">0344 4183049</span> on WhatsApp.
+                      After payment, EasyPaisa will SMS you the TID. Enter it here so we can verify and dispatch your order. You can also send the TID to <span className="text-bark/60 font-500">0344-4183049</span> on WhatsApp.
                     </p>
                   </div>
                 </div>
@@ -482,14 +544,18 @@ function CheckoutModal({ items, onClose, onSuccess }) {
                 <Check size={36} className="text-saffron" />
               </div>
               <h3 className="font-display text-3xl text-bark mb-1">Order Placed!</h3>
-              <p className="font-body text-sm text-bark/40 mb-8">Your order has been successfully confirmed.</p>
+              <p className="font-body text-sm text-bark/40 mb-8">
+                {placedOrder?.status === 'awaiting_payment'
+                  ? "We'll dispatch your order once your payment is verified."
+                  : "Your order has been successfully confirmed."}
+              </p>
               <div className="bg-rose/30 border border-bark/8 rounded-xl p-5 text-left space-y-3 mb-5">
                 {[
-                  ['Order ID', <span key="o" className="text-saffron font-500">{orderNum}</span>],
+                  ['Order ID', <span key="o" className="text-saffron font-500">{placedOrder?.orderNumber || '—'}</span>],
                   ['Customer', form.name || 'Customer'],
                   ['Phone', '+92 ' + form.phone],
                   ['Delivery to', form.city],
-                  ['Total Paid', `PKR ${grand.toLocaleString()}`],
+                  ['Total', `PKR ${grand.toLocaleString()}`],
                   ['Payment via', form.payment === 'easypaisa' ? <EasyPaisaLogo key="ep" size="sm" /> : 'Cash on Delivery'],
                   ...(form.payment === 'easypaisa' && easyTid ? [['Transaction ID', easyTid]] : []),
                   ['Est. Delivery', '2–4 working days'],
@@ -503,6 +569,57 @@ function CheckoutModal({ items, onClose, onSuccess }) {
               <p className="font-body text-xs text-bark/20">Thank you for shopping with Saffron & Co.</p>
             </div>
           )}
+          {step === 5 && placedOrder && (
+            <div className="py-2">
+              <h3 className="font-display text-2xl text-bark mb-1">Upload Payment Proof</h3>
+              <p className="font-body text-xs text-bark/40 mb-5">
+                Order <span className="text-saffron font-500">{placedOrder.orderNumber}</span> · PKR {grand.toLocaleString()} via EasyPaisa
+              </p>
+
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-3.5 mb-4 flex items-start gap-2">
+                <AlertCircle size={14} className="text-amber-700 shrink-0 mt-0.5"/>
+                <p className="font-body text-xs text-amber-800">
+                  Please upload your EasyPaisa transfer screenshot so we can verify and dispatch your order.
+                </p>
+              </div>
+
+              {proofUploaded ? (
+                <div className="text-center py-8">
+                  <div className="w-14 h-14 bg-green-100 border-2 border-green-300 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Check size={24} className="text-green-700"/>
+                  </div>
+                  <p className="font-display text-lg text-bark">Proof uploaded</p>
+                  <p className="font-body text-xs text-bark/40 mt-1">Redirecting...</p>
+                </div>
+              ) : (
+                <>
+                  <label className={`block bg-cream border-2 border-dashed rounded-xl px-4 py-8 text-center cursor-pointer hover:border-saffron/50 transition-colors ${proofFile ? 'border-saffron/60' : 'border-bark/15'}`}>
+                    <input type="file" accept="image/jpeg,image/jpg,image/png,image/webp"
+                      onChange={e => setProofFile(e.target.files?.[0] || null)} className="hidden"/>
+                    <Upload size={20} className="text-saffron mx-auto mb-2"/>
+                    {proofFile ? (
+                      <>
+                        <p className="font-body font-500 text-sm text-bark truncate">{proofFile.name}</p>
+                        <p className="font-body text-[11px] text-bark/40 mt-1">{(proofFile.size / 1024).toFixed(0)} KB · click to change</p>
+                      </>
+                    ) : (
+                      <>
+                        <p className="font-body text-sm text-bark">Click to choose screenshot</p>
+                        <p className="font-body text-[11px] text-bark/40 mt-1">JPG / PNG / WebP · max 5 MB</p>
+                      </>
+                    )}
+                  </label>
+                </>
+              )}
+
+              {placeError && (
+                <div className="mt-3 bg-red-50 border border-red-200 rounded-lg p-3 flex items-center gap-2">
+                  <AlertCircle size={13} className="text-red-600"/>
+                  <p className="font-body text-xs text-red-700">{placeError}</p>
+                </div>
+              )}
+            </div>
+          )}
         </div>
         <div className="px-6 py-4 border-t border-bark/10 shrink-0">
           {step === 1 && <button onClick={() => setStep(2)} className="w-full btn-shimmer text-white font-body py-3.5 rounded-xl flex items-center justify-center gap-2 text-sm">Continue to Delivery <ArrowRight size={15} /></button>}
@@ -514,14 +631,32 @@ function CheckoutModal({ items, onClose, onSuccess }) {
             </div>
           )}
           {step === 3 && (
-            <div className="flex gap-3">
-              <button onClick={() => setStep(2)} className="flex-1 border border-bark/15 py-3.5 rounded-xl font-body text-sm text-bark/40 hover:text-bark hover:border-bark/30 transition-colors">Back</button>
-              <button onClick={placeOrder} disabled={!canPay}
-                className="flex-[2] btn-shimmer text-white font-body py-3.5 rounded-xl text-sm disabled:opacity-40 flex items-center justify-center gap-2">
-                Place Order · PKR {grand.toLocaleString()} <Check size={14} /></button>
+            <div className="space-y-3">
+              {placeError && (
+                <div className="bg-red-50 border border-red-200 rounded-lg p-3 flex items-center gap-2">
+                  <AlertCircle size={13} className="text-red-600"/>
+                  <p className="font-body text-xs text-red-700">{placeError}</p>
+                </div>
+              )}
+              <div className="flex gap-3">
+                <button onClick={() => setStep(2)} disabled={placing} className="flex-1 border border-bark/15 py-3.5 rounded-xl font-body text-sm text-bark/40 hover:text-bark hover:border-bark/30 transition-colors disabled:opacity-40">Back</button>
+                <button onClick={placeOrder} disabled={!canPay || placing}
+                  className="flex-[2] btn-shimmer text-white font-body py-3.5 rounded-xl text-sm disabled:opacity-40 flex items-center justify-center gap-2">
+                  {placing ? <><Loader2 size={14} className="animate-spin"/> Placing...</> : <>Place Order · PKR {grand.toLocaleString()} <Check size={14} /></>}
+                </button>
+              </div>
             </div>
           )}
           {step === 4 && <button onClick={onClose} className="w-full btn-shimmer text-white font-body py-3.5 rounded-xl text-sm">Continue Shopping</button>}
+          {step === 5 && (
+            <div className="flex gap-3">
+              <button onClick={skipProof} disabled={uploadingProof} className="flex-1 border border-bark/15 py-3.5 rounded-xl font-body text-sm text-bark/40 hover:text-bark transition-colors disabled:opacity-40">Skip for now</button>
+              <button onClick={submitProof} disabled={!proofFile || uploadingProof || proofUploaded}
+                className="flex-[2] btn-shimmer text-white font-body py-3.5 rounded-xl text-sm disabled:opacity-40 flex items-center justify-center gap-2">
+                {uploadingProof ? <><Loader2 size={14} className="animate-spin"/> Uploading...</> : <><Upload size={14}/> Upload Proof</>}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -536,15 +671,30 @@ function AccountPage({ allProducts, wishlist, onWish, onAdd, navigate }) {
   const [tab, setTab] = useState('orders')
   const [phone, setPhone] = useState('')
   const [searched, setSearched] = useState(false)
+  const [searching, setSearching] = useState(false)
+  const [searchError, setSearchError] = useState(null)
   const [orders, setOrders] = useState([])
   const [invoiceOrder, setInvoiceOrder] = useState(null)
 
-  const search = () => {
-    const all = loadOrders()
-    const normalized = phone.replace(/\s/g, '')
-    const found = all.filter(o => o.customer.phone.replace(/\D/g, '').includes(normalized.replace(/\D/g, '')))
-    setOrders(found)
-    setSearched(true)
+  const search = async () => {
+    setSearching(true); setSearchError(null)
+    try {
+      // Try backend first; fall back to localStorage if offline
+      let found = []
+      try {
+        found = await trackOrdersByPhone(phone)
+      } catch {
+        const all = loadOrders()
+        const normalized = phone.replace(/\s/g, '').replace(/\D/g, '')
+        found = all.filter(o => String(o.customer?.phone || '').replace(/\D/g, '').includes(normalized))
+      }
+      setOrders(found)
+      setSearched(true)
+    } catch (err) {
+      setSearchError(err.message || 'Search failed')
+    } finally {
+      setSearching(false)
+    }
   }
 
   const wishlistProducts = allProducts.filter(p => wishlist.includes(p.id))
@@ -580,31 +730,41 @@ function AccountPage({ allProducts, wishlist, onWish, onAdd, navigate }) {
                     onKeyDown={e => e.key === 'Enter' && search()}
                     className="flex-1 bg-transparent font-body text-sm text-bark placeholder:text-bark/20 outline-none" />
                 </div>
-                <button onClick={search}
-                  className="btn-shimmer text-white font-body text-sm px-6 rounded-xl">
-                  Track
+                <button onClick={search} disabled={searching || !phone.trim()}
+                  className="btn-shimmer text-white font-body text-sm px-6 rounded-xl disabled:opacity-40 flex items-center justify-center gap-2 min-w-[100px]">
+                  {searching ? <Loader2 size={14} className="animate-spin"/> : 'Track'}
                 </button>
               </div>
             </div>
 
             {searched && orders.length === 0 && (
-              <div className="text-center py-16 reveal">
+              <div className="text-center py-16">
                 <Package size={40} className="text-bark/10 mx-auto mb-3" />
                 <p className="font-display text-xl text-bark/30">No orders found</p>
                 <p className="font-body text-sm text-bark/25 mt-1">Try a different number or check your spelling.</p>
               </div>
             )}
 
-            {orders.map((order, i) => (
-              <div key={i} className="bg-white border border-bark/8 rounded-2xl p-5 mb-4 reveal">
-                <div className="flex items-start justify-between mb-4">
+            {orders.map((order, i) => {
+              const statusMap = {
+                awaiting_payment: { bg: 'bg-amber-100', text: 'text-amber-700', label: 'Awaiting Payment' },
+                confirmed:        { bg: 'bg-blue-100',  text: 'text-blue-700',  label: 'Confirmed' },
+                processing:       { bg: 'bg-purple-100',text: 'text-purple-700',label: 'Processing' },
+                dispatched:       { bg: 'bg-indigo-100',text: 'text-indigo-700',label: 'Dispatched' },
+                delivered:        { bg: 'bg-green-100', text: 'text-green-700', label: 'Delivered' },
+                cancelled:        { bg: 'bg-red-100',   text: 'text-red-700',   label: 'Cancelled' },
+              }
+              const sty = statusMap[order.status] || { bg: 'bg-saffron/10', text: 'text-saffron', label: order.status || 'Confirmed' }
+              return (
+              <div key={order.orderNumber || i} className="bg-white border border-bark/8 rounded-2xl p-5 mb-4">
+                <div className="flex items-start justify-between mb-4 flex-wrap gap-2">
                   <div>
                     <p className="font-body font-500 text-sm text-saffron">{order.orderNumber}</p>
                     <p className="font-body text-xs text-bark/30 mt-0.5">{new Date(order.createdAt).toLocaleDateString('en-PK', { year:'numeric', month:'long', day:'numeric' })}</p>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-saffron/10 font-body text-xs text-saffron">
-                      <Check size={10} /> Confirmed
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className={`inline-flex items-center px-2.5 py-1 rounded-full font-body font-500 text-[10px] uppercase tracking-wider ${sty.bg} ${sty.text}`}>
+                      {sty.label}
                     </span>
                     <button onClick={() => setInvoiceOrder(order)}
                       className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-bark/15 font-body text-xs text-bark/50 hover:border-saffron hover:text-saffron transition-colors">
@@ -622,12 +782,27 @@ function AccountPage({ allProducts, wishlist, onWish, onAdd, navigate }) {
                     </div>
                   )}
                 </div>
+                {order.tracking && (
+                  <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-3 mb-3 flex items-start gap-2">
+                    <Truck size={14} className="text-indigo-700 mt-0.5 shrink-0"/>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-body text-xs text-indigo-700">
+                        <strong>{order.tracking.carrier}</strong> · <span className="font-mono">{order.tracking.trackingNumber}</span>
+                      </p>
+                      {order.tracking.trackingUrl && (
+                        <a href={order.tracking.trackingUrl} target="_blank" rel="noopener noreferrer" className="font-body text-[11px] text-indigo-600 hover:underline">
+                          Track on {order.tracking.carrier} →
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                )}
                 <div className="flex justify-between items-center pt-3 border-t border-bark/8">
                   <p className="font-body text-xs text-bark/40">{order.items.length} item{order.items.length !== 1 ? 's' : ''} · {order.customer.city}</p>
                   <p className="font-display text-base text-bark">PKR {order.total.toLocaleString()}</p>
                 </div>
               </div>
-            ))}
+            )})}
 
             {!searched && (
               <div className="text-center py-12 reveal">
@@ -822,8 +997,8 @@ function Footer({ navigate }) {
             </button>
             <p className="font-body text-sm text-cream/40 leading-relaxed mb-4">Luxury beauty rooted in nature. Every product crafted with intention and botanical wisdom.</p>
             <div className="space-y-1.5 mb-6">
-              <p className="font-body text-xs text-cream/35 flex items-start gap-2"><MapPin size={12} className="mt-0.5 shrink-0 text-saffron-light" />Office 3A, Paradise Apartment Gujju Matta, Ferozpur Road Lahore</p>
-              <p className="font-body text-xs text-cream/35 flex items-center gap-2"><Phone size={12} className="shrink-0 text-saffron-light" />0344 4183049</p>
+              <p className="font-body text-xs text-cream/35 flex items-start gap-2"><MapPin size={12} className="mt-0.5 shrink-0 text-saffron-light" />Office 3A, Paradise Apartment, Gujju Matta, Ferozpur Road, Lahore</p>
+              <p className="font-body text-xs text-cream/35 flex items-center gap-2"><Phone size={12} className="shrink-0 text-saffron-light" />0344-4183049</p>
               <p className="font-body text-xs text-cream/35 flex items-center gap-2"><Mail size={12} className="shrink-0 text-saffron-light" />info@saffronco.pk</p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
@@ -1262,7 +1437,7 @@ function ContactPage() {
             <div className="space-y-6">
               {[
                 { icon: <MapPin size={18} />, title: 'Address', lines: ['Office 3A, Paradise Apartment', 'Gujju Matta, Ferozpur Road', 'Lahore, Pakistan'] },
-                { icon: <Phone size={18} />, title: 'Phone', lines: ['0344 4183049', 'Mon – Sat, 9am – 6pm PKT'] },
+                { icon: <Phone size={18} />, title: 'Phone', lines: ['0344-4183049', 'Mon – Sat, 9am – 6pm PKT'] },
                 { icon: <Mail size={18} />, title: 'Email', lines: ['info@saffronco.pk', 'support@saffronco.pk'] },
               ].map(({ icon, title, lines }) => (
                 <div key={title} className="flex gap-4">
@@ -1338,7 +1513,7 @@ function PrivacyPage() {
     { title: 'Data Security', content: 'We implement industry-standard security measures to protect your personal information. However, no method of transmission over the internet is 100% secure. We encourage you to use a secure password and protect your account credentials.' },
     { title: 'Your Rights', content: 'You have the right to access, correct, or delete your personal information. You may also opt out of marketing communications at any time. To exercise these rights, please contact us at privacy@saffronco.pk.' },
     { title: 'Changes to This Policy', content: 'We may update this Privacy Policy from time to time. We will notify you of any significant changes by posting a notice on our website. Your continued use of our services after changes constitutes acceptance of the updated policy.' },
-    { title: 'Contact Us', content: 'If you have any questions about this Privacy Policy, please contact us at privacy@saffronco.pk or write to us at Office 3A, Paradise Apartment Gujju Matta, Ferozpur Road Lahore.' },
+    { title: 'Contact Us', content: 'If you have any questions about this Privacy Policy, please contact us at privacy@saffronco.pk or write to us at Office 3A, Paradise Apartment, Gujju Matta, Ferozpur Road, Lahore.' },
   ]
   return (
     <div className="pt-24 pb-20 bg-cream">
@@ -1378,7 +1553,7 @@ function TermsPage() {
     { title: 'Intellectual Property', content: 'All content on this website, including images, text, logos, and product descriptions, is the property of Saffron & Co and is protected by copyright law. Unauthorised use, reproduction, or distribution is strictly prohibited.' },
     { title: 'Limitation of Liability', content: 'Saffron & Co shall not be liable for any indirect, incidental, or consequential damages arising from the use of our products or services. Our total liability shall not exceed the amount paid for the specific order in question.' },
     { title: 'Governing Law', content: 'These Terms of Service are governed by the laws of Pakistan. Any disputes shall be resolved in the courts of Lahore, Pakistan.' },
-    { title: 'Contact', content: 'For any questions regarding these terms, please contact us at legal@saffronco.pk or write to us at Office 3A, Paradise Apartment Gujju Matta, Ferozpur Road Lahore.' },
+    { title: 'Contact', content: 'For any questions regarding these terms, please contact us at legal@saffronco.pk or write to us at Office 3A, Paradise Apartment, Gujju Matta, Ferozpur Road, Lahore.' },
   ]
   return (
     <div className="pt-24 pb-20 bg-cream">
@@ -1406,7 +1581,33 @@ function TermsPage() {
 /* ─────────────────────────────────────────────────────
    APP
 ───────────────────────────────────────────────────── */
+function AdminApp() {
+  return (
+    <div className="admin-shell">
+      <Routes>
+        <Route path="/admin/login"                element={<AdminLogin/>}/>
+        <Route path="/admin"                      element={<AdminGuard><AdminDashboard/></AdminGuard>}/>
+        <Route path="/admin/orders"               element={<AdminGuard><AdminOrders/></AdminGuard>}/>
+        <Route path="/admin/orders/:number"       element={<AdminGuard><AdminOrderDetail/></AdminGuard>}/>
+        <Route path="/admin/products"             element={<AdminGuard><AdminProducts/></AdminGuard>}/>
+        <Route path="/admin/reviews"              element={<AdminGuard><AdminReviews/></AdminGuard>}/>
+        <Route path="/admin/stock"                element={<AdminGuard><AdminStock/></AdminGuard>}/>
+        <Route path="/admin/customers"            element={<AdminGuard><AdminCustomers/></AdminGuard>}/>
+      </Routes>
+      <ToastContainer />
+    </div>
+  )
+}
+
 export default function App() {
+  const location = useLocation()
+  if (location.pathname.startsWith('/admin')) {
+    return <AdminApp/>
+  }
+  return <Storefront/>
+}
+
+function Storefront() {
   const routerNav  = useRouterNavigate()
   const location   = useLocation()
 
@@ -1420,9 +1621,25 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [selectedProduct, setSelectedProduct]   = useState(null)
   const [invoiceOrder, setInvoiceOrder]         = useState(null)
-  const [allProducts, setAllProducts]           = useState(ALL_PRODUCTS)
+  const [baseProducts, setBaseProducts]         = useState(ALL_PRODUCTS)
+  const [productOverrides, setProductOverrides] = useState({})
   const [categoriesData, setCategoriesData]     = useState(CATEGORIES_DATA)
   const [shopFilter, setShopFilter]             = useState('All')
+
+  // Apply overrides on top of base products. Disabled products are filtered out entirely.
+  const allProducts = useMemo(() => {
+    return baseProducts
+      .filter(p => !productOverrides[p.id]?.disabled)
+      .map(p => {
+        const o = productOverrides[p.id]
+        if (!o) return p
+        const out = { ...p }
+        if (o.price != null) out.price = o.price
+        if (o.stock != null) out.stock = o.stock
+        if (o.badge !== undefined && o.badge !== null) out.badge = o.badge
+        return out
+      })
+  }, [baseProducts, productOverrides])
 
   // Initialise page state from URL on first load
   useEffect(() => {
@@ -1442,8 +1659,21 @@ export default function App() {
 
   // Fetch from static API (shows in Network tab)
   useEffect(() => {
-    fetchProducts().then(data => setAllProducts(data)).catch(() => {})
+    fetchProducts().then(data => setBaseProducts(data)).catch(() => {})
     fetchCategories().then(data => setCategoriesData(data)).catch(() => {})
+  }, [])
+
+  // Poll product overrides every 60s (cheap, keeps disabled products hidden)
+  useEffect(() => {
+    let cancelled = false
+    const fetchOverrides = () => {
+      getProductOverrides()
+        .then(o => { if (!cancelled) setProductOverrides(o || {}) })
+        .catch(() => {})
+    }
+    fetchOverrides()
+    const t = setInterval(fetchOverrides, 60_000)
+    return () => { cancelled = true; clearInterval(t) }
   }, [])
 
   // Splash screen

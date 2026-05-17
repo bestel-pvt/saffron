@@ -20,7 +20,7 @@
       "badge": "New",
       "rating": 4.7,
       "stock": 38,
-      "img": "https://images.unsplash.com/photo-1616750819801-4311f2c43890?w=500&auto=format&fit=crop",
+      "img": "/images/skincare/2.jpg",
       "desc": "Lightweight gel-cream with Damask rose and hyaluronic acid."
     },
     {
@@ -32,7 +32,7 @@
       "badge": "Sale",
       "rating": 4.6,
       "stock": 52,
-      "img": "https://images.unsplash.com/photo-1623143445418-40c192fa3d11?w=500&auto=format&fit=crop",
+      "img": "/images/skincare/3.jpg",
       "desc": "Weekly purifying mask with organic turmeric and kaolin clay."
     },
     {
@@ -43,7 +43,7 @@
       "badge": "Luxury",
       "rating": 4.8,
       "stock": 28,
-      "img": "https://images.unsplash.com/photo-1665763630810-e6251bdd392d?w=500&auto=format&fit=crop",
+      "img": "/images/skincare/4.jpg",
       "desc": "Stable ascorbyl glucoside for glass-skin radiance."
     },
     {
@@ -54,7 +54,7 @@
       "badge": "Bestseller",
       "rating": 4.8,
       "stock": 35,
-      "img": "https://images.unsplash.com/photo-1616750819801-4311f2c43890?w=500&auto=format&fit=crop",
+      "img": "/images/skincare/5.jpg",
       "desc": "Overnight repair cream with jasmine absolute and peptides."
     },
     {
@@ -65,7 +65,7 @@
       "badge": "New",
       "rating": 4.5,
       "stock": 60,
-      "img": "https://images.unsplash.com/photo-1679394270597-e90694d70350?w=500&auto=format&fit=crop",
+      "img": "/images/skincare/6.jpg",
       "desc": "Three-weight HA toner for multi-depth hydration."
     },
     {
@@ -75,7 +75,7 @@
       "price": 2400,
       "rating": 4.7,
       "stock": 42,
-      "img": "https://images.unsplash.com/photo-1710410815589-dd83514104d0?w=500&auto=format&fit=crop",
+      "img": "/images/skincare/7.jpg",
       "desc": "Invisible, reef-safe SPF with green tea antioxidants."
     },
     {
@@ -86,7 +86,7 @@
       "badge": "Luxury",
       "rating": 4.9,
       "stock": 20,
-      "img": "https://images.unsplash.com/photo-1665763630810-e6251bdd392d?w=500&auto=format&fit=crop",
+      "img": "/images/skincare/8.jpg",
       "desc": "Plant-based retinol alternative. Safe for sensitive skin."
     },
     {
@@ -96,7 +96,7 @@
       "price": 2100,
       "rating": 4.6,
       "stock": 48,
-      "img": "https://images.unsplash.com/photo-1665763630810-e6251bdd392d?w=500&auto=format&fit=crop",
+      "img": "/images/skincare/9.jpg",
       "desc": "Cold-pressed rosehip oil rich in vitamin A and essential fatty acids."
     },
     {
@@ -107,7 +107,7 @@
       "badge": "Bestseller",
       "rating": 4.7,
       "stock": 55,
-      "img": "https://images.unsplash.com/photo-1665763630810-e6251bdd392d?w=500&auto=format&fit=crop",
+      "img": "/images/skincare/10.jpg",
       "desc": "Pre-soaked AHA pads for smooth, refined texture overnight."
     },
     {
@@ -117,7 +117,7 @@
       "price": 1700,
       "rating": 4.5,
       "stock": 44,
-      "img": "https://images.unsplash.com/photo-1665763630810-e6251bdd392d?w=500&auto=format&fit=crop",
+      "img": "/images/skincare/11.jpg",
       "desc": "Cica-centred essence that calms redness and strengthens barrier."
     },
     {
@@ -128,7 +128,7 @@
       "badge": "Luxury",
       "rating": 4.8,
       "stock": 25,
-      "img": "https://images.unsplash.com/photo-1665763630810-e6251bdd392d?w=500&auto=format&fit=crop",
+      "img": "/images/skincare/12.jpg",
       "desc": "Multi-peptide formula that targets fine lines and dark circles."
     },
     {
@@ -139,7 +139,7 @@
       "badge": "New",
       "rating": 4.4,
       "stock": 70,
-      "img": "https://images.unsplash.com/photo-1713768704571-6aeb0d0e5105?w=500&auto=format&fit=crop",
+      "img": "/images/skincare/13.jpg",
       "desc": "Refreshing gel cleanser that melts away makeup without stripping."
     },
     {
@@ -151,7 +151,7 @@
       "originalPrice": 2000,
       "rating": 4.6,
       "stock": 58,
-      "img": "https://images.unsplash.com/photo-1665763630810-e6251bdd392d?w=500&auto=format&fit=crop",
+      "img": "/images/skincare/14.jpg",
       "desc": "High-strength niacinamide to minimise pores and balance oil."
     },
     {
@@ -162,7 +162,7 @@
       "badge": "Luxury",
       "rating": 4.9,
       "stock": 15,
-      "img": "https://images.unsplash.com/photo-1623143445418-40c192fa3d11?w=500&auto=format&fit=crop",
+      "img": "/images/skincare/15.jpg",
       "desc": "24K gold leaf and collagen-boosting ingredients in one decadent mask."
     },
     {
@@ -195,7 +195,7 @@
       "badge": "Bestseller",
       "rating": 4.6,
       "stock": 80,
-      "img": "https://images.unsplash.com/photo-1617178965450-9ca355aee975?w=500&auto=format&fit=crop",
+      "img": "/images/makeup/3.jpg",
       "desc": "Smooth, smudge-proof kohl pencil with almond oil conditioning."
     },
     {
@@ -205,7 +205,7 @@
       "price": 1800,
       "rating": 4.5,
       "stock": 35,
-      "img": "https://images.unsplash.com/photo-1680789526783-5a33ecedf154?w=500&auto=format&fit=crop",
+      "img": "/images/makeup/4.jpg",
       "desc": "Two complementary blush shades inspired by saffron sunrise."
     },
     {
@@ -216,7 +216,7 @@
       "badge": "New",
       "rating": 4.6,
       "stock": 50,
-      "img": "https://images.unsplash.com/photo-1617178965450-9ca355aee975?w=500&auto=format&fit=crop",
+      "img": "/images/makeup/5.jpg",
       "desc": "Long-wearing brow pomade with feather-like precision tip."
     },
     {
@@ -227,7 +227,7 @@
       "badge": "Luxury",
       "rating": 4.7,
       "stock": 30,
-      "img": "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?w=500&auto=format&fit=crop",
+      "img": "/images/makeup/6.jpg",
       "desc": "Finely milled powder with saffron mica for a lit-from-within glow."
     },
     {
@@ -238,7 +238,7 @@
       "badge": "Bestseller",
       "rating": 4.8,
       "stock": 55,
-      "img": "https://images.unsplash.com/photo-1617178965450-9ca355aee975?w=500&auto=format&fit=crop",
+      "img": "/images/makeup/7.jpg",
       "desc": "Botanical-infused mascara for 24h volume without clumping."
     },
     {
@@ -250,7 +250,7 @@
       "originalPrice": 1100,
       "rating": 4.4,
       "stock": 75,
-      "img": "https://images.unsplash.com/photo-1559828350-dbd975c52096?w=500&auto=format&fit=crop",
+      "img": "/images/makeup/8.jpg",
       "desc": "6-shade collection of long-wearing lip liners in earthy tones."
     },
     {
@@ -260,7 +260,7 @@
       "price": 1900,
       "rating": 4.6,
       "stock": 42,
-      "img": "https://images.unsplash.com/photo-1617176892739-98fc49fdcbe7?w=500&auto=format&fit=crop",
+      "img": "/images/makeup/9.jpg",
       "desc": "Dual-ended stick for sculpting and highlighting in one swipe."
     },
     {
@@ -271,7 +271,7 @@
       "badge": "New",
       "rating": 4.5,
       "stock": 48,
-      "img": "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?w=500&auto=format&fit=crop",
+      "img": "/images/makeup/10.jpg",
       "desc": "Skin-smoothing primer with hyaluronic acid and botanical extracts."
     },
     {
@@ -282,7 +282,7 @@
       "badge": "Luxury",
       "rating": 4.8,
       "stock": 22,
-      "img": "https://images.unsplash.com/photo-1617178965450-9ca355aee975?w=500&auto=format&fit=crop",
+      "img": "/images/makeup/11.jpg",
       "desc": "Four harmonious shades from petal pink to deep burgundy."
     },
     {
@@ -292,7 +292,7 @@
       "price": 1500,
       "rating": 4.5,
       "stock": 53,
-      "img": "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?w=500&auto=format&fit=crop",
+      "img": "/images/makeup/12.jpg",
       "desc": "Brightening concealer with vitamin C for under-eye darkness."
     },
     {
@@ -303,7 +303,7 @@
       "badge": "Bestseller",
       "rating": 4.7,
       "stock": 37,
-      "img": "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?w=500&auto=format&fit=crop",
+      "img": "/images/makeup/13.jpg",
       "desc": "Sun-kissed bronzer with warm saffron undertones."
     },
     {
@@ -315,7 +315,7 @@
       "originalPrice": 1300,
       "rating": 4.6,
       "stock": 68,
-      "img": "https://images.unsplash.com/photo-1617178965450-9ca355aee975?w=500&auto=format&fit=crop",
+      "img": "/images/makeup/14.jpg",
       "desc": "Precision felt-tip liner for sharp wings and smudge-free definition."
     },
     {
@@ -326,7 +326,7 @@
       "badge": "New",
       "rating": 4.5,
       "stock": 60,
-      "img": "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?w=500&auto=format&fit=crop",
+      "img": "/images/makeup/15.jpg",
       "desc": "Rose water setting spray that extends wear and adds a dewy finish."
     },
     {
@@ -359,7 +359,7 @@
       "badge": "Luxury",
       "rating": 4.9,
       "stock": 12,
-      "img": "https://images.unsplash.com/photo-1615160460366-2c9a41771b51?w=500&auto=format&fit=crop",
+      "img": "/images/fragrance/3.jpg",
       "desc": "Dark, complex patchouli and Cambodian oud for the bold wearer."
     },
     {
@@ -381,7 +381,7 @@
       "badge": "Bestseller",
       "rating": 4.8,
       "stock": 45,
-      "img": "https://images.unsplash.com/photo-1615160460366-2c9a41771b51?w=500&auto=format&fit=crop",
+      "img": "/images/fragrance/5.jpg",
       "desc": "Hand-selected bakhoor chips for home fragrance and gifting."
     },
     {
@@ -392,7 +392,7 @@
       "badge": "Luxury",
       "rating": 4.8,
       "stock": 28,
-      "img": "https://images.unsplash.com/photo-1655892817271-c66841c2506e?w=500&auto=format&fit=crop",
+      "img": "/images/hair-care/1.jpg",
       "desc": "Active-ingredient scalp serum targeting thinning and dryness."
     },
     {
@@ -425,7 +425,7 @@
       "price": 1500,
       "rating": 4.5,
       "stock": 58,
-      "img": "https://images.unsplash.com/photo-1686121544157-6f178a23d584?w=500&auto=format&fit=crop",
+      "img": "/images/hair-care/4.jpg",
       "desc": "Zinc pyrithione and neem formula that clears dandruff gently."
     },
     {
@@ -448,7 +448,7 @@
       "originalPrice": 2400,
       "rating": 4.6,
       "stock": 38,
-      "img": "https://images.unsplash.com/photo-1655892817271-c66841c2506e?w=500&auto=format&fit=crop",
+      "img": "/images/hair-care/6.jpg",
       "desc": "2-in-1 serum: heat protectant and glossing treatment in one."
     },
     {
@@ -470,7 +470,7 @@
       "badge": "Bestseller",
       "rating": 4.8,
       "stock": 55,
-      "img": "https://images.unsplash.com/photo-1498843053639-170ff2122f35?w=500&auto=format&fit=crop",
+      "img": "/images/body-care/1.jpg",
       "desc": "Fast-absorbing lotion with saffron and shea butter for silky skin."
     },
     {
@@ -481,7 +481,7 @@
       "badge": "Luxury",
       "rating": 4.8,
       "stock": 32,
-      "img": "https://images.unsplash.com/photo-1585945037805-5fd82c2e60b1?w=500&auto=format&fit=crop",
+      "img": "/images/body-care/2.jpg",
       "desc": "Luxurious dry oil with 100 rose petals per bottle."
     },
     {
@@ -492,7 +492,7 @@
       "badge": "New",
       "rating": 4.5,
       "stock": 65,
-      "img": "https://images.unsplash.com/photo-1586220742613-b731f66f7743?w=500&auto=format&fit=crop",
+      "img": "/images/body-care/3.jpg",
       "desc": "Light, everyday jasmine body mist. Spritz, glow, go."
     },
     {
@@ -503,7 +503,7 @@
       "badge": "Bestseller",
       "rating": 4.6,
       "stock": 58,
-      "img": "https://images.unsplash.com/photo-1498843053639-170ff2122f35?w=500&auto=format&fit=crop",
+      "img": "/images/body-care/4.jpg",
       "desc": "Daily brightening body wash with niacinamide and licorice."
     },
     {
@@ -513,7 +513,7 @@
       "price": 1100,
       "rating": 4.4,
       "stock": 72,
-      "img": "https://images.unsplash.com/photo-1608068811588-3a67006b7489?w=500&auto=format&fit=crop",
+      "img": "/images/body-care/5.jpg",
       "desc": "Gentle, soap-free body wash for sensitive skin."
     },
     {
@@ -524,7 +524,7 @@
       "badge": "Bestseller",
       "rating": 4.7,
       "stock": 40,
-      "img": "https://images.unsplash.com/photo-1601065732058-029db52c86b4?w=500&auto=format&fit=crop",
+      "img": "/images/body-care/6.jpg",
       "desc": "Cocoa and shea butter blend clinically proven to reduce stretch marks."
     },
     {
@@ -536,7 +536,7 @@
       "originalPrice": 1200,
       "rating": 4.6,
       "stock": 80,
-      "img": "https://images.unsplash.com/photo-1586220742613-b731f66f7743?w=500&auto=format&fit=crop",
+      "img": "/images/body-care/7.jpg",
       "desc": "Calming lavender mist for linens, pillows, and body."
     },
     {
@@ -547,7 +547,7 @@
       "badge": "Luxury",
       "rating": 4.8,
       "stock": 30,
-      "img": "https://images.unsplash.com/photo-1601065732058-029db52c86b4?w=500&auto=format&fit=crop",
+      "img": "/images/body-care/8.jpg",
       "desc": "Whipped coconut and jojoba butter that melts on contact."
     },
     {
@@ -569,7 +569,7 @@
       "badge": "New",
       "rating": 4.7,
       "stock": 65,
-      "img": "https://images.unsplash.com/photo-1570088727237-68500d217455?w=500&auto=format&fit=crop",
+      "img": "/images/lip-care/2.jpg",
       "desc": "Plumping lip oil with saffron and hyaluronic acid."
     },
     {
@@ -580,7 +580,7 @@
       "badge": "Luxury",
       "rating": 4.8,
       "stock": 40,
-      "img": "https://images.unsplash.com/photo-1577195594933-f844fa36c37c?w=500&auto=format&fit=crop",
+      "img": "/images/lip-care/3.jpg",
       "desc": "Intensive sleeping lip mask. Wake up to hydrated, pillowy lips."
     },
     {
@@ -592,7 +592,7 @@
       "originalPrice": 1200,
       "rating": 4.5,
       "stock": 72,
-      "img": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500&auto=format&fit=crop",
+      "img": "/images/lip-care/4.jpg",
       "desc": "Sheer colour + intense moisture in a creamy bullet."
     },
     {
@@ -603,7 +603,7 @@
       "badge": "New",
       "rating": 4.6,
       "stock": 85,
-      "img": "https://images.unsplash.com/photo-1577195594933-f844fa36c37c?w=500&auto=format&fit=crop",
+      "img": "/images/lip-care/5.jpg",
       "desc": "Edible honey and sugar scrub for smooth lip canvas."
     },
     {
@@ -614,7 +614,7 @@
       "badge": "Luxury",
       "rating": 4.7,
       "stock": 30,
-      "img": "https://images.unsplash.com/photo-1631214499500-2e34edcaccfe?w=500&auto=format&fit=crop",
+      "img": "/images/lip-care/6.jpg",
       "desc": "Clinical-grade peptide serum to volumise and define lip borders."
     },
     {
@@ -625,7 +625,7 @@
       "badge": "Bestseller",
       "rating": 4.7,
       "stock": 68,
-      "img": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500&auto=format&fit=crop",
+      "img": "/images/lip-care/7.jpg",
       "desc": "Buildable berry stain that transfers zero colour to your cup."
     },
     {
@@ -636,7 +636,7 @@
       "badge": "New",
       "rating": 4.6,
       "stock": 55,
-      "img": "https://images.unsplash.com/photo-1570088727237-68500d217455?w=500&auto=format&fit=crop",
+      "img": "/images/lip-care/8.jpg",
       "desc": "Non-sticky gloss with marine collagen for fuller-looking lips."
     },
     {
@@ -646,7 +646,7 @@
       "price": 1100,
       "rating": 4.5,
       "stock": 60,
-      "img": "https://images.unsplash.com/photo-1613255348289-1407e4f2f980?w=500&auto=format&fit=crop",
+      "img": "/images/lip-care/9.jpg",
       "desc": "Velvet-matte lip cream in 12 shades. Comfortable for 8+ hours."
     },
     {
@@ -657,7 +657,7 @@
       "badge": "New",
       "rating": 4.5,
       "stock": 75,
-      "img": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500&auto=format&fit=crop",
+      "img": "/images/lip-care/10.jpg",
       "desc": "Targeted vitamin C treatment for pigmented lips."
     },
     {
@@ -668,7 +668,7 @@
       "badge": "Bestseller",
       "rating": 4.8,
       "stock": 50,
-      "img": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500&auto=format&fit=crop",
+      "img": "/images/lip-care/11.jpg",
       "desc": "Thick shea and ceramide pack to repair severely dry lips overnight."
     },
     {
@@ -679,7 +679,7 @@
       "badge": "Luxury",
       "rating": 4.7,
       "stock": 22,
-      "img": "https://images.unsplash.com/photo-1613255348289-1407e4f2f980?w=500&auto=format&fit=crop",
+      "img": "/images/lip-care/12.jpg",
       "desc": "Liner, lipstick, and gloss for a perfect ombre in one kit."
     },
     {
@@ -691,7 +691,7 @@
       "originalPrice": 950,
       "rating": 4.4,
       "stock": 88,
-      "img": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500&auto=format&fit=crop",
+      "img": "/images/lip-care/13.jpg",
       "desc": "Cooling peppermint balm that soothes and plumps simultaneously."
     },
     {
@@ -701,7 +701,7 @@
       "price": 1400,
       "rating": 4.6,
       "stock": 45,
-      "img": "https://images.unsplash.com/photo-1613255348289-1407e4f2f980?w=500&auto=format&fit=crop",
+      "img": "/images/lip-care/14.jpg",
       "desc": "Nudes inspired by South Asian skin tones. Velvet finish, all day."
     },
     {
@@ -712,7 +712,7 @@
       "badge": "Luxury",
       "rating": 4.9,
       "stock": 18,
-      "img": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500&auto=format&fit=crop",
+      "img": "/images/lip-care/15.jpg",
       "desc": "Complete 3-step lip rehab: scrub, serum, and overnight mask."
     },
     {
@@ -723,7 +723,7 @@
       "badge": "Bestseller",
       "rating": 4.8,
       "stock": 35,
-      "img": "https://images.unsplash.com/photo-1643379855542-82c0c7483f3a?w=500&auto=format&fit=crop",
+      "img": "/images/eye-care/1.jpg",
       "desc": "Caffeine and peptides for dark circles and puffiness in 4 weeks."
     },
     {
@@ -734,7 +734,7 @@
       "badge": "Luxury",
       "rating": 4.9,
       "stock": 20,
-      "img": "https://images.unsplash.com/photo-1622910076411-b126ff7e469b?w=500&auto=format&fit=crop",
+      "img": "/images/eye-care/2.jpg",
       "desc": "Micro-retinol formula for crow's feet and hooded lid improvement."
     },
     {
@@ -745,7 +745,7 @@
       "badge": "New",
       "rating": 4.7,
       "stock": 50,
-      "img": "https://images.unsplash.com/photo-1566534268110-74c44e12e34d?w=500&auto=format&fit=crop",
+      "img": "/images/eye-care/3.jpg",
       "desc": "24K gold hydrogel patches. 20 pairs. Bridal-ready results."
     },
     {
@@ -757,7 +757,7 @@
       "originalPrice": 1800,
       "rating": 4.5,
       "stock": 60,
-      "img": "https://images.unsplash.com/photo-1622618991227-412b19e4fef9?w=500&auto=format&fit=crop",
+      "img": "/images/eye-care/4.jpg",
       "desc": "Cucumber and aloe gel that deflates puffiness on contact."
     },
     {
@@ -768,7 +768,7 @@
       "badge": "Bestseller",
       "rating": 4.7,
       "stock": 28,
-      "img": "https://images.unsplash.com/photo-1643379855542-82c0c7483f3a?w=500&auto=format&fit=crop",
+      "img": "/images/eye-care/5.jpg",
       "desc": "Vitamin K and kojic acid targeted treatment for stubborn dark circles."
     },
     {
@@ -779,7 +779,7 @@
       "badge": "New",
       "rating": 4.8,
       "stock": 32,
-      "img": "https://images.unsplash.com/photo-1622910076411-b126ff7e469b?w=500&auto=format&fit=crop",
+      "img": "/images/eye-care/6.jpg",
       "desc": "Clinically proven lash growth serum. Visible in 6 weeks."
     },
     {
@@ -789,7 +789,7 @@
       "price": 1200,
       "rating": 4.5,
       "stock": 55,
-      "img": "https://images.unsplash.com/photo-1622618991227-412b19e4fef9?w=500&auto=format&fit=crop",
+      "img": "/images/eye-care/7.jpg",
       "desc": "Conditioning clear gel for feathery, laminated-look brows."
     },
     {
@@ -800,7 +800,7 @@
       "badge": "Luxury",
       "rating": 4.7,
       "stock": 25,
-      "img": "https://images.unsplash.com/photo-1643379855542-82c0c7483f3a?w=500&auto=format&fit=crop",
+      "img": "/images/eye-care/8.jpg",
       "desc": "DMAE and collagen cream for firmer, more lifted eyelids."
     },
     {
@@ -811,7 +811,7 @@
       "badge": "New",
       "rating": 4.6,
       "stock": 42,
-      "img": "https://images.unsplash.com/photo-1643379855542-82c0c7483f3a?w=500&auto=format&fit=crop",
+      "img": "/images/eye-care/9.jpg",
       "desc": "Rich balm with sea buckthorn and vitamin E for dry periorbital skin."
     },
     {
@@ -823,7 +823,7 @@
       "originalPrice": 1400,
       "rating": 4.5,
       "stock": 65,
-      "img": "https://images.unsplash.com/photo-1622910076411-b126ff7e469b?w=500&auto=format&fit=crop",
+      "img": "/images/eye-care/10.jpg",
       "desc": "Dissolving hydrogel masks with illuminating mica and niacinamide."
     },
     {
@@ -834,7 +834,7 @@
       "badge": "Bestseller",
       "rating": 4.7,
       "stock": 38,
-      "img": "https://images.unsplash.com/photo-1622910076411-b126ff7e469b?w=500&auto=format&fit=crop",
+      "img": "/images/eye-care/11.jpg",
       "desc": "Stable vitamin C eye booster for brightness and collagen support."
     },
     {
@@ -845,7 +845,7 @@
       "badge": "New",
       "rating": 4.6,
       "stock": 44,
-      "img": "https://images.unsplash.com/photo-1622910076411-b126ff7e469b?w=500&auto=format&fit=crop",
+      "img": "/images/eye-care/12.jpg",
       "desc": "Hydrating HA eye serum that plumps fine dehydration lines."
     },
     {
@@ -856,7 +856,7 @@
       "badge": "Luxury",
       "rating": 4.9,
       "stock": 15,
-      "img": "https://images.unsplash.com/photo-1643379855542-82c0c7483f3a?w=500&auto=format&fit=crop",
+      "img": "/images/eye-care/13.jpg",
       "desc": "Complete duo: day cream + night serum for total eye rejuvenation."
     },
     {
@@ -866,7 +866,7 @@
       "price": 1300,
       "rating": 4.4,
       "stock": 58,
-      "img": "https://images.unsplash.com/photo-1643379855542-82c0c7483f3a?w=500&auto=format&fit=crop",
+      "img": "/images/eye-care/14.jpg",
       "desc": "Marine collagen setting mist that refreshes eye makeup mid-day."
     },
     {
@@ -877,7 +877,7 @@
       "badge": "Bestseller",
       "rating": 4.7,
       "stock": 36,
-      "img": "https://images.unsplash.com/photo-1566534268110-74c44e12e34d?w=500&auto=format&fit=crop",
+      "img": "/images/eye-care/15.jpg",
       "desc": "Overnight sleeping mask specifically designed for the eye area."
     },
     {
@@ -888,7 +888,7 @@
       "badge": "Bestseller",
       "rating": 4.7,
       "stock": 55,
-      "img": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=500&auto=format&fit=crop&q=80",
+      "img": "/images/mens-grooming/1.jpg",
       "desc": "Deep-cleansing face wash for men with saffron and charcoal."
     },
     {
@@ -899,7 +899,7 @@
       "badge": "Bestseller",
       "rating": 4.6,
       "stock": 60,
-      "img": "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=500&auto=format&fit=crop&q=80",
+      "img": "/images/mens-grooming/2.jpg",
       "desc": "Alcohol-free balm that soothes post-shave irritation."
     },
     {
@@ -911,7 +911,7 @@
       "originalPrice": 1900,
       "rating": 4.5,
       "stock": 52,
-      "img": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=500&auto=format&fit=crop",
+      "img": "/images/mens-grooming/3.jpg",
       "desc": "Deep-cleansing scrub that draws out pollution and unclogs pores."
     },
     {
@@ -922,7 +922,7 @@
       "badge": "Bestseller",
       "rating": 4.8,
       "stock": 30,
-      "img": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=500&auto=format&fit=crop&q=80",
+      "img": "/images/mens-grooming/4.jpg",
       "desc": "DHT-blocking serum with biotin and red clover for denser growth."
     },
     {
@@ -933,7 +933,7 @@
       "badge": "New",
       "rating": 4.5,
       "stock": 58,
-      "img": "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=500&auto=format&fit=crop&q=80",
+      "img": "/images/mens-grooming/5.jpg",
       "desc": "2-in-1 formula for healthy scalp and conditioned beard."
     },
     {
@@ -945,7 +945,7 @@
       "originalPrice": 1500,
       "rating": 4.4,
       "stock": 65,
-      "img": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=500&auto=format&fit=crop",
+      "img": "/images/mens-grooming/6.jpg",
       "desc": "Glycerin-rich shaving cream for a close, irritation-free shave."
     },
     {
@@ -956,7 +956,7 @@
       "badge": "New",
       "rating": 4.5,
       "stock": 80,
-      "img": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=500&auto=format&fit=crop&q=80",
+      "img": "/images/mens-grooming/7.jpg",
       "desc": "Unscented, unfussy lip balm with beeswax and vitamin E."
     },
     {
@@ -967,7 +967,7 @@
       "badge": "New",
       "rating": 4.6,
       "stock": 50,
-      "img": "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=500&auto=format&fit=crop&q=80",
+      "img": "/images/mens-grooming/8.jpg",
       "desc": "Satisfying peel-off mask that extracts blackheads in one go."
     },
     {
@@ -978,7 +978,7 @@
       "badge": "Bestseller",
       "rating": 4.8,
       "stock": 40,
-      "img": "https://images.unsplash.com/photo-1732900293895-233f769299b3?w=500&auto=format&fit=crop",
+      "img": "/images/wellness/1.jpg",
       "desc": "Marine collagen + vitamin C daily beauty drink for skin and nails."
     },
     {
@@ -989,7 +989,7 @@
       "badge": "New",
       "rating": 4.7,
       "stock": 55,
-      "img": "https://images.unsplash.com/photo-1664956618021-73c47736845e?w=500&auto=format&fit=crop",
+      "img": "/images/wellness/2.jpg",
       "desc": "Certified saffron and chamomile blend for calm focus and mood lift."
     },
     {
@@ -1000,7 +1000,7 @@
       "badge": "Luxury",
       "rating": 4.8,
       "stock": 30,
-      "img": "https://images.unsplash.com/photo-1732900490015-a5167a642998?w=500&auto=format&fit=crop",
+      "img": "/images/wellness/3.jpg",
       "desc": "Liquid D3/K2 complex for bone, skin, and immune health."
     },
     {
@@ -1011,7 +1011,7 @@
       "badge": "Luxury",
       "rating": 4.9,
       "stock": 18,
-      "img": "https://images.unsplash.com/photo-1707129785947-ddc627a8bab9?w=500&auto=format&fit=crop",
+      "img": "/images/wellness/4.jpg",
       "desc": "Monthly supply: collagen, biotin, zinc, and vitamin C in one box."
     },
     {
@@ -1022,7 +1022,7 @@
       "badge": "Bestseller",
       "rating": 4.7,
       "stock": 60,
-      "img": "https://images.unsplash.com/photo-1732900490015-a5167a642998?w=500&auto=format&fit=crop",
+      "img": "/images/wellness/5.jpg",
       "desc": "High-potency biotin with bamboo silica for hair, skin, and nails."
     },
     {
@@ -1033,7 +1033,7 @@
       "badge": "New",
       "rating": 4.7,
       "stock": 35,
-      "img": "https://images.unsplash.com/photo-1707129785947-ddc627a8bab9?w=500&auto=format&fit=crop",
+      "img": "/images/wellness/6.jpg",
       "desc": "Multi-strain probiotics clinically linked to clearer, calmer skin."
     },
     {
@@ -1044,7 +1044,7 @@
       "badge": "New",
       "rating": 4.6,
       "stock": 42,
-      "img": "https://images.unsplash.com/photo-1732900490015-a5167a642998?w=500&auto=format&fit=crop",
+      "img": "/images/wellness/7.jpg",
       "desc": "Ashwagandha and tulsi blend to lower cortisol and support skin barrier."
     },
     {
@@ -1056,7 +1056,7 @@
       "originalPrice": 2200,
       "rating": 4.6,
       "stock": 52,
-      "img": "https://images.unsplash.com/photo-1732900490015-a5167a642998?w=500&auto=format&fit=crop",
+      "img": "/images/wellness/8.jpg",
       "desc": "Natural vitamin C from rosehip berry extract. 250mg per capsule."
     },
     {
@@ -1067,7 +1067,7 @@
       "badge": "Bestseller",
       "rating": 4.7,
       "stock": 45,
-      "img": "https://images.unsplash.com/photo-1707129785947-ddc627a8bab9?w=500&auto=format&fit=crop",
+      "img": "/images/wellness/9.jpg",
       "desc": "Magnesium glycinate for deep sleep and overnight skin repair."
     },
     {
@@ -1078,7 +1078,7 @@
       "badge": "Luxury",
       "rating": 4.8,
       "stock": 25,
-      "img": "https://images.unsplash.com/photo-1707129785947-ddc627a8bab9?w=500&auto=format&fit=crop",
+      "img": "/images/wellness/10.jpg",
       "desc": "Internal HA supplementation for plumper skin from the inside."
     },
     {
@@ -1088,7 +1088,7 @@
       "price": 2000,
       "rating": 4.5,
       "stock": 48,
-      "img": "https://images.unsplash.com/photo-1732900490015-a5167a642998?w=500&auto=format&fit=crop",
+      "img": "/images/wellness/11.jpg",
       "desc": "EPA/DHA complex for skin elasticity, hair, and anti-inflammation."
     },
     {
@@ -1099,7 +1099,7 @@
       "badge": "New",
       "rating": 4.5,
       "stock": 62,
-      "img": "https://images.unsplash.com/photo-1707129785947-ddc627a8bab9?w=500&auto=format&fit=crop",
+      "img": "/images/wellness/12.jpg",
       "desc": "Anti-inflammatory duo for skin clarity and digestive wellness."
     },
     {
@@ -1111,7 +1111,7 @@
       "originalPrice": 1600,
       "rating": 4.4,
       "stock": 70,
-      "img": "https://images.unsplash.com/photo-1732900490015-a5167a642998?w=500&auto=format&fit=crop",
+      "img": "/images/wellness/13.jpg",
       "desc": "Zinc bisglycinate for acne-prone and oily skin control."
     },
     {
@@ -1122,7 +1122,7 @@
       "badge": "Bestseller",
       "rating": 4.7,
       "stock": 58,
-      "img": "https://images.unsplash.com/photo-1732900490015-a5167a642998?w=500&auto=format&fit=crop",
+      "img": "/images/wellness/14.jpg",
       "desc": "GLA-rich evening primrose oil for hormonal skin and eczema relief."
     },
     {
@@ -1133,7 +1133,7 @@
       "badge": "Luxury",
       "rating": 4.8,
       "stock": 20,
-      "img": "https://images.unsplash.com/photo-1732900490015-a5167a642998?w=500&auto=format&fit=crop",
+      "img": "/images/wellness/15.jpg",
       "desc": "Resveratrol, astaxanthin, and CoQ10 — the anti-ageing triple threat."
     },
     {
@@ -1144,7 +1144,7 @@
       "badge": "Bestseller",
       "rating": 4.8,
       "stock": 35,
-      "img": "https://images.unsplash.com/photo-1583241800806-1ab2556fabd0?w=500&auto=format&fit=crop",
+      "img": "/images/tools-accessories/1.jpg",
       "desc": "Authentic rose quartz facial roller for lymphatic drainage."
     },
     {
@@ -1155,7 +1155,7 @@
       "badge": "New",
       "rating": 4.7,
       "stock": 45,
-      "img": "https://images.unsplash.com/photo-1583241800804-8eea95214a87?w=500&auto=format&fit=crop",
+      "img": "/images/tools-accessories/2.jpg",
       "desc": "Jade and bian stone gua sha set for face sculpting."
     },
     {
@@ -1166,7 +1166,7 @@
       "badge": "Bestseller",
       "rating": 4.7,
       "stock": 55,
-      "img": "https://images.unsplash.com/photo-1583241800967-3b926edea1f2?w=500&auto=format&fit=crop",
+      "img": "/images/tools-accessories/3.jpg",
       "desc": "Densely packed synthetic kabuki for seamless foundation blending."
     },
     {
@@ -1177,7 +1177,7 @@
       "badge": "Luxury",
       "rating": 4.8,
       "stock": 25,
-      "img": "https://images.unsplash.com/photo-1680244169777-a3d7d758a264?w=500&auto=format&fit=crop",
+      "img": "/images/tools-accessories/4.jpg",
       "desc": "Stainless steel facial massager for sculpting and puffiness relief."
     },
     {
@@ -1189,7 +1189,7 @@
       "originalPrice": 1200,
       "rating": 4.5,
       "stock": 70,
-      "img": "https://images.unsplash.com/photo-1583241800967-3b926edea1f2?w=500&auto=format&fit=crop",
+      "img": "/images/tools-accessories/5.jpg",
       "desc": "Textured silicone mat for deep-cleaning all brush sizes."
     },
     {
@@ -1200,7 +1200,7 @@
       "badge": "New",
       "rating": 4.6,
       "stock": 60,
-      "img": "https://images.unsplash.com/photo-1777390435474-9f96d60435c6?w=500&auto=format&fit=crop",
+      "img": "/images/tools-accessories/6.jpg",
       "desc": "Gold-plated lash curler with 3 replacement pads. Salon-grade."
     },
     {
@@ -1211,7 +1211,7 @@
       "badge": "New",
       "rating": 4.4,
       "stock": 85,
-      "img": "https://images.unsplash.com/photo-1583241800967-3b926edea1f2?w=500&auto=format&fit=crop",
+      "img": "/images/tools-accessories/7.jpg",
       "desc": "No-waste silicone brush for hygienic mask application."
     },
     {
@@ -1223,7 +1223,7 @@
       "originalPrice": 1100,
       "rating": 4.3,
       "stock": 75,
-      "img": "https://images.unsplash.com/photo-1777390435474-9f96d60435c6?w=500&auto=format&fit=crop",
+      "img": "/images/tools-accessories/8.jpg",
       "desc": "12 reusable stencil shapes for perfectly shaped brows every time."
     },
     {
@@ -1234,7 +1234,7 @@
       "badge": "Bestseller",
       "rating": 4.7,
       "stock": 40,
-      "img": "https://images.unsplash.com/photo-1777390435474-9f96d60435c6?w=500&auto=format&fit=crop",
+      "img": "/images/tools-accessories/9.jpg",
       "desc": "Precision dermaplaning tool for vellus hair removal and smoothing."
     },
     {
@@ -1245,7 +1245,7 @@
       "badge": "Luxury",
       "rating": 4.8,
       "stock": 22,
-      "img": "https://images.unsplash.com/photo-1777390435474-9f96d60435c6?w=500&auto=format&fit=crop",
+      "img": "/images/tools-accessories/10.jpg",
       "desc": "LED-lit 10× magnifying mirror. Perfect for skincare and makeup."
     },
     {
@@ -1256,7 +1256,7 @@
       "badge": "New",
       "rating": 4.7,
       "stock": 30,
-      "img": "https://images.unsplash.com/photo-1583241800967-3b926edea1f2?w=500&auto=format&fit=crop",
+      "img": "/images/tools-accessories/11.jpg",
       "desc": "5 professional contour brushes: blush, highlight, sculpt, blend, liner."
     },
     {
@@ -1266,7 +1266,7 @@
       "price": 1600,
       "rating": 4.5,
       "stock": 48,
-      "img": "https://images.unsplash.com/photo-1583241800804-8eea95214a87?w=500&auto=format&fit=crop",
+      "img": "/images/tools-accessories/12.jpg",
       "desc": "Flat jade rolling pin for facial de-puffing and muscle tension."
     },
     {
@@ -1277,7 +1277,7 @@
       "badge": "Luxury",
       "rating": 4.6,
       "stock": 28,
-      "img": "https://images.unsplash.com/photo-1583241800806-1ab2556fabd0?w=500&auto=format&fit=crop",
+      "img": "/images/tools-accessories/13.jpg",
       "desc": "0.3mm titanium micro-needle roller for serum absorption enhancement."
     },
     {
@@ -1288,7 +1288,7 @@
       "badge": "Bestseller",
       "rating": 4.6,
       "stock": 55,
-      "img": "https://images.unsplash.com/photo-1583241800967-3b926edea1f2?w=500&auto=format&fit=crop",
+      "img": "/images/tools-accessories/14.jpg",
       "desc": "Soft-bristle silicone body brush for gentle exfoliation in shower."
     },
     {
@@ -1299,7 +1299,7 @@
       "badge": "New",
       "rating": 4.7,
       "stock": 35,
-      "img": "https://images.unsplash.com/photo-1583241800967-3b926edea1f2?w=500&auto=format&fit=crop",
+      "img": "/images/tools-accessories/15.jpg",
       "desc": "Canvas brush roll holds 12 brushes. Elegant and TSA-safe."
     },
     {
@@ -1310,7 +1310,7 @@
       "badge": "Bestseller",
       "rating": 4.9,
       "stock": 20,
-      "img": "https://images.unsplash.com/photo-1574885914529-e157b2664e4c?w=500&auto=format&fit=crop",
+      "img": "/images/gift-sets/1.jpg",
       "desc": "The best of Saffron & Co: serum, moisturiser, face oil, and lip balm."
     },
     {
@@ -1321,7 +1321,7 @@
       "badge": "Bestseller",
       "rating": 4.8,
       "stock": 25,
-      "img": "https://images.unsplash.com/photo-1575075835950-99efb232e2eb?w=500&auto=format&fit=crop",
+      "img": "/images/gift-sets/2.jpg",
       "desc": "5-step routine: cleanser, toner, serum, moisturiser, SPF."
     },
     {
@@ -1332,7 +1332,7 @@
       "badge": "Bestseller",
       "rating": 4.9,
       "stock": 22,
-      "img": "https://images.unsplash.com/photo-1574885914529-e157b2664e4c?w=500&auto=format&fit=crop",
+      "img": "/images/gift-sets/3.jpg",
       "desc": "Body lotion, scrub, rose water mist, and bath salts for mum."
     },
     {
@@ -1343,7 +1343,7 @@
       "badge": "New",
       "rating": 4.6,
       "stock": 40,
-      "img": "https://images.unsplash.com/photo-1574885914529-e157b2664e4c?w=500&auto=format&fit=crop",
+      "img": "/images/gift-sets/4.jpg",
       "desc": "Body scrub, body lotion, and dry oil spray for radiant skin."
     },
     {
@@ -1354,10 +1354,10 @@
       "badge": "Bestseller",
       "rating": 4.8,
       "stock": 25,
-      "img": "https://images.unsplash.com/photo-1574885914529-e157b2664e4c?w=500&auto=format&fit=crop",
+      "img": "/images/gift-sets/5.jpg",
       "desc": "Bestselling rose serum + saffron face oil. Boxed to impress."
     }
   ],
   "count": 123,
-  "updated": "2026-05-11T15:55:01.377Z"
+  "updated": "2026-05-17T23:27:48.568Z"
 }

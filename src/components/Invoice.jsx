@@ -42,8 +42,8 @@ export default function Invoice({ order, onClose }) {
               </p>
               <p className="font-body text-[10px] text-bark/35 tracking-wider mb-2">Luxury Beauty. Rooted in Nature.</p>
               <div className="font-body text-[10px] text-bark/40 space-y-0.5">
-                <p className="flex items-center gap-1.5"><MapPin size={10} /> Office 3A, Paradise Apartment, Ferozpur Road, Lahore</p>
-                <p className="flex items-center gap-1.5"><Phone size={10} /> 0344 4183049</p>
+                <p className="flex items-center gap-1.5"><MapPin size={10} /> Office 3A, Paradise Apartment, Gujju Matta, Ferozpur Road, Lahore</p>
+                <p className="flex items-center gap-1.5"><Phone size={10} /> 0344-4183049</p>
                 <p className="flex items-center gap-1.5"><Mail size={10} /> info@saffronco.pk</p>
               </div>
             </div>
@@ -159,10 +159,10 @@ export default function Invoice({ order, onClose }) {
               <span className="font-body text-sm text-bark font-600">Thank you for shopping with Saffron & Co!</span>
             </div>
             <p className="font-body text-xs text-bark/30">
-              Expected delivery 2–4 working days · info@saffronco.pk · 0344 4183049
+              Expected delivery 2–4 working days · info@saffronco.pk · 0344-4183049
             </p>
             <p className="font-body text-[10px] text-bark/20 mt-2">
-              © 2026 Saffron & Co · Office 3A, Paradise Apartment, Ferozpur Road, Lahore
+              © 2026 Saffron & Co · Office 3A, Paradise Apartment, Gujju Matta, Ferozpur Road, Lahore
             </p>
           </div>
         </div>

@@ -113,3 +113,27 @@ input:focus, textarea:focus {
   outline: none;
   border-color: var(--saffron) !important;
 }
+
+/* ─── Admin panel reset — restore native cursors ──────────────────────────── */
+html:has(.admin-shell),
+html:has(.admin-shell) body,
+.admin-shell {
+  cursor: auto !important;
+}
+.admin-shell button,
+.admin-shell a,
+.admin-shell [role="button"],
+.admin-shell select,
+.admin-shell input[type="checkbox"],
+.admin-shell input[type="radio"] {
+  cursor: pointer !important;
+}
+.admin-shell input,
+.admin-shell textarea,
+.admin-shell [contenteditable] {
+  cursor: text !important;
+}
+.admin-shell button:disabled,
+.admin-shell [aria-disabled="true"] {
+  cursor: not-allowed !important;
+}
