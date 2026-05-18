@@ -48,6 +48,11 @@ export default function AdminOrderDetail() {
 
   async function loadProof() {
     try {
+      // If the proof has a public URL (R2-backed), use it directly — no JWT fetch needed.
+      if (order?.paymentProof?.url) {
+        setProofUrl(order.paymentProof.url)
+        return
+      }
       const blob = await adminFetchPaymentProofBlob(number)
       setProofUrl(URL.createObjectURL(blob))
     } catch (err) {

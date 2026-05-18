@@ -2,7 +2,7 @@
  * server/routes/reviews.js — public review endpoints
  */
 import express from 'express'
-import { createReview, getApprovedReviewsForProduct, getReviewAggregates } from '../db.js'
+import { createReview, getApprovedReviewsForProduct, getReviewAggregates } from '../store.js'
 
 const router = express.Router()
 

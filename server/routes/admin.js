@@ -11,7 +11,7 @@ import {
   getAllStock, setStock, getAllCustomers, getStats,
   getAllReviews, setReviewStatus, deleteReview,
   getAllProductOverrides, setProductOverride, clearProductOverride,
-} from '../db.js'
+} from '../store.js'
 import { signAdminToken, requireAdmin } from '../auth.js'
 
 const __dir = path.dirname(fileURLToPath(import.meta.url))

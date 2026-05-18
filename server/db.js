@@ -91,13 +91,13 @@ export async function nextOrderNumber() {
 export async function createOrder(order) {
   return enqueue(async () => {
     const d = await getDb()
-    const phoneDigits = String(order.customer?.phone || '').replace(/\D/g, '')
+    const phoneNormalized = normalizePhone(order.customer?.phone)
 
-    // Upsert customer
-    let customer = d.data.customers.find(c => c.phoneDigits === phoneDigits)
+    // Upsert customer — keyed by normalized phone so all formats collapse to one record
+    let customer = d.data.customers.find(c => c.phoneDigits === phoneNormalized)
     if (!customer) {
       customer = {
-        phoneDigits,
+        phoneDigits: phoneNormalized,
         name: order.customer.name,
         phone: order.customer.phone,
         city: order.customer.city,
@@ -142,9 +142,10 @@ export async function getOrderByNumber(orderNumber) {
 
 export async function getOrdersByPhone(phone) {
   const d = await getDb()
-  const digits = String(phone).replace(/\D/g, '')
+  const normalized = normalizePhone(phone)
+  if (!normalized) return []
   return d.data.orders
-    .filter(o => String(o.customer?.phone || '').replace(/\D/g, '').includes(digits))
+    .filter(o => normalizePhone(o.customer?.phone) === normalized)
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
 }
 

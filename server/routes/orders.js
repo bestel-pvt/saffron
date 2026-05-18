@@ -9,13 +9,19 @@ import { fileURLToPath } from 'url'
 import {
   nextOrderNumber, createOrder, getOrderByNumber, getOrdersByPhone,
   updateOrderStatus, setPaymentProof,
-} from '../db.js'
+} from '../store.js'
+import { isR2Configured, uploadBuffer } from '../storage-r2.js'
 
 const __dir = path.dirname(fileURLToPath(import.meta.url))
 const UPLOAD_DIR = process.env.UPLOAD_DIR || path.join(__dir, '..', 'uploads', 'payment-proofs')
-fs.mkdirSync(UPLOAD_DIR, { recursive: true })
+const useR2 = isR2Configured()
 
-const storage = multer.diskStorage({
+if (!useR2) {
+  // Only ensure local dir if we'll write to disk
+  fs.mkdirSync(UPLOAD_DIR, { recursive: true })
+}
+
+const diskStorage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, UPLOAD_DIR),
   filename: (req, file, cb) => {
     const orderNumber = req.params.number || 'unknown'
@@ -24,14 +30,18 @@ const storage = multer.diskStorage({
     cb(null, `${orderNumber}-${ts}${ext}`)
   },
 })
+
 const upload = multer({
-  storage,
+  // Memory storage when R2 is on; disk when running locally with lowdb
+  storage: useR2 ? multer.memoryStorage() : diskStorage,
   limits: { fileSize: 5 * 1024 * 1024 }, // 5MB
   fileFilter: (req, file, cb) => {
     const ok = /^image\/(jpe?g|png|webp)$/.test(file.mimetype)
     cb(ok ? null : new Error('Only JPG/PNG/WebP images allowed'), ok)
   },
 })
+
+console.log(`[orders] Payment proof storage: ${useR2 ? 'Cloudflare R2' : 'local disk'}`)
 
 const router = express.Router()
 
@@ -114,19 +124,43 @@ router.post('/:number/proof', upload.single('proof'), async (req, res) => {
   try {
     const { number } = req.params
     if (!req.file) return res.status(400).json({ error: 'No file uploaded' })
+
     const order = await getOrderByNumber(number)
     if (!order) {
-      // Clean up the file
-      try { fs.unlinkSync(req.file.path) } catch {}
+      // Clean up local file if disk-stored
+      if (req.file.path) {
+        try { fs.unlinkSync(req.file.path) } catch {}
+      }
       return res.status(404).json({ error: 'Order not found' })
     }
-    await setPaymentProof(number, {
-      filename: req.file.filename,
-      originalName: req.file.originalname,
-      size: req.file.size,
-      mimetype: req.file.mimetype,
-    })
-    res.json({ success: true, filename: req.file.filename })
+
+    let proofMeta
+    if (useR2) {
+      // Multer.memoryStorage gives us a Buffer
+      const uploaded = await uploadBuffer(
+        req.file.buffer,
+        `${number}-${Date.now()}${path.extname(req.file.originalname).toLowerCase() || '.jpg'}`,
+        req.file.mimetype,
+        'payment-proofs'
+      )
+      proofMeta = {
+        filename: uploaded.filename,
+        originalName: req.file.originalname,
+        size: uploaded.size,
+        mimetype: uploaded.mimetype,
+        url: uploaded.url,         // public R2 URL
+      }
+    } else {
+      proofMeta = {
+        filename: req.file.filename,
+        originalName: req.file.originalname,
+        size: req.file.size,
+        mimetype: req.file.mimetype,
+      }
+    }
+
+    await setPaymentProof(number, proofMeta)
+    res.json({ success: true, filename: proofMeta.filename, url: proofMeta.url })
   } catch (err) {
     console.error('[POST /api/orders/:number/proof] error:', err)
     res.status(500).json({ error: err.message || 'Upload failed' })
